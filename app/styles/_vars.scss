@@ -1,3 +1,50 @@
 
 // Your variable overrides
-$body-bg: red;
+$body-bg: #f6f3e8;
+
+// font
+
+// COLORS
+$theme-colors: (
+    primary: #e30520,
+    secondary: #00295a,
+);
+
+
+    // fonti: (
+    //   primary: #e30520,
+    //   secondary: #00295a
+    // ),
+    // produzione: (
+    //   primary: #e30520,
+    //   secondary: #00295a
+    // ),
+    // logistica: (
+    //   primary: #e30520,
+    //   secondary: #00295a
+    // ),
+    // consumo: (
+    //   primary: #e30520,
+    //   secondary: #00295a
+    // ),
+    // riciclo: (
+    //   primary: #e30520,
+    //   secondary: #00295a
+    // )
+
+// breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1812px
+);
+
+// container sizes
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 820px,
+  xl: 1640px
+);
