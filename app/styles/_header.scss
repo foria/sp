@@ -1,4 +1,9 @@
 
+body.menu-opened {
+    height: 100%;
+    overflow: hidden;
+}
+
 .main-header {
     @include responsive-size("height", 60);
     @include responsive-size("padding-left", 26);
@@ -6,7 +11,11 @@
 
     background-color: rgba(255,255,255,.5);
     border-bottom-right-radius: 40px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translatex(-50%);
+    z-index: $zindex-modal;
 
     &:before {
         content: "";
@@ -29,16 +38,6 @@
 .front-menu {
     height: 100%;
 }
-
-
-$cursive: 'Advent Pro', sans-serif;
-$gray: #23222a;
-$white: #fff;
-$red: #e65454;
-$black: #000;
-$md-width: 62em;
-$sm-width: 48em;
-$xs-width: 30em;
 
 
 .nav-trigger {
@@ -94,7 +93,16 @@ $xs-width: 30em;
     left: 0;
     display: none;
     z-index: $zindex-modal;
-    background-color: #f2c93d;
+    background: rgba(0, 41, 90, .95);
+    text-align: left;
+    //transition: background 1s ease-in-ou;
+
+    .nav-trigger {
+        position: absolute;
+        @include responsive-size("top", 25);
+        left: calc( 50% + #{map-get($container-max-widths, lg) / 2} - 26px );
+        transform: translateX(-100%);
+    }
 
     ul {
         list-style-type: none;

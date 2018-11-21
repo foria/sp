@@ -1,9 +1,19 @@
 jQuery(function($){
 
     $(document).ready(function(){
-        $('body').on('click', '.nav-trigger', function() {
+        $('.nav-trigger').on('click', function() {
             $('body').toggleClass('menu-opened');
             $('.nav-menu').fadeToggle(200);
+        });
+
+        var menuBG;
+        $('.nav-menu li a').hover(function(){
+            menuBG = $(this).data('bg');
+            console.log(menuBG);
+
+            if(menuBG) {
+                $('.nav-menu').css('backgroundColor', menuBG);
+            }
         });
 
         // $(document).scroll(function (e) {

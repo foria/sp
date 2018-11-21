@@ -21,26 +21,31 @@
   </head>
   <body>
 
-    <header class="container main-header">
+    <header>
 
-      <ul class="nav justify-content-end align-items-center front-menu">
-        <li><a href="#"><icon class="facebook"></icon></a></li>
-        <li><a href="#"><icon class="linkedin"></icon></a></li>
-        <li><a href="#"><icon class="youtube"></icon></a></li>
-        <li class="nav-trigger js_navbar">
-          <span></span><span></span><span></span>
-        </li>
-      </ul>
+      <nav class="container main-header">
+        <ul class="nav justify-content-end align-items-center front-menu">
+          <li><a href="#"><icon class="facebook"></icon></a></li>
+          <li><a href="#"><icon class="linkedin"></icon></a></li>
+          <li><a href="#"><icon class="youtube"></icon></a></li>
+          <li class="nav-trigger js_navbar">
+            <span></span><span></span><span></span>
+          </li>
+        </ul>
+      </nav>
 
       <nav class="nav-menu" role="primary-navigation">
+        <div class="nav-trigger js_navbar">
+          <span></span><span></span><span></span>
+        </div>
         <ul class="container">
           <li><a href="#">Home</a></li>
-          <li><a href="#">Chi Siamo</a></li>
-          <li><a href="#">Fonti e territorio</a></li>
-          <li><a href="#">Produzione e imbottigliamento</a></li>
-          <li><a href="#">Trasproti e logistica</a></li>
-          <li><a href="#">Consumi e cittadini</a></li>
-          <li><a href="#">Riciclo, risparmio, recupero e riuso</a></li>
+          <li><a href="#" data-bg="rgba(0, 41, 90, .95)" class="active">Chi Siamo</a></li>
+          <li><a href="#" data-bg="rgba(217, 192, 134, .95)">Fonti e territorio</a></li>
+          <li><a href="#" data-bg="rgba(180, 204, 111, .95)">Produzione e imbottigliamento</a></li>
+          <li><a href="#" data-bg="rgba(130, 195, 227, .95)">Trasproti e logistica</a></li>
+          <li><a href="#" data-bg="rgba(172, 158, 173, .95)">Consumi e cittadini</a></li>
+          <li><a href="#" data-bg="rgba(246, 203, 33, .95)">Riciclo, risparmio, recupero e riuso</a></li>
           <li><a href="#">Scarica la versione PDF</a></li>
         </ul>
       </nav>
@@ -51,28 +56,29 @@
       <div class="wheel"></div>
     </section>
 
-    <div role="main" class="container">
+    <div role="main">
 
-      <section id="ad-msg">
+      <section id="ad-msg" class="container section">
         <h2>Insieme per una bella azienda</h2>
         <figure>
           <img src="ad" />
           <figcaption>
-            <quote>Con questo documento vi accompagniamo alla scoperta del nostro modo di lavorare, sperando che anche voi possiate apprezzare ciò che insieme facciamo per costruire ogni giorno una “bella azienda”.</quote>
-            <div><h4>FEDERICO SARZI BRAGA</h4> Presidente e Amministratore Delegato</div>
+            <div class="ad-msg--quote circle circle-secondary"><p>Con questo documento vi accompagniamo alla scoperta del nostro modo di lavorare, sperando che anche voi possiate apprezzare ciò che insieme facciamo per costruire ogni giorno una <strong>“bella azienda”.</strong></p></div>
+            <div class="ad-msg--name circle circle-primary"><p>FEDERICO<br> SARZI BRAGA <small>Presidente e Amministratore Delegato</small></p></div>
           </figcaption>
         </figure>
       </section>
 
-      <section id="about">
+      <section id="about" class="section">
         <h1>Chi Siamo</h1>
         <h2>Il gruppo San Pellegrino</h2>
         <p>Dal 1899 portiamo prodotti di alta qualità alle persone e alcune delle eccellenze del nostro Paese in oltre 150 nazioni del mondo attraverso i nostri brand.</p>
-        <p><span>Fatturato realizzato</span></p>
-        <p><span>895</span>milioni di euro con 3,7 miliardi di bottiglie prodotte</p>
+        <div class="about--year circle"><p><span>Fatturato realizzato</span>2017</p></div>
+        <div class="about--revenue circle"><p><strong>895</strong>milioni di euro con 3,7 miliardi di bottiglie prodotte</p></div>
+        <div class="about--world circle">SANPELLEGRINO NEL MONDO</div>
       </section>
 
-      <section id="world-map">
+      <section id="world-map" class="section">
         <p>NORD AMERICA +9,8% <span>vs 2016</span></p>
         <p>SUD AMERICA +18,4% <span>vs 2016</span></p>
         <p>EUROPA +4,2% <span>vs 2016</span></p>
@@ -80,49 +86,54 @@
         <p>ASIA e OCEANIA +6,7% <span>vs 2016</span></p>
       </section>
 
-      <section id="team-brands">
-
-        <ul class="nav nav-tabs" id="team-brands-tab" role="tablist">
+      <section id="team-brands" class="section container">
+        <ul class="nav nav-tabs" id="teamBrandsTab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" id="team" data-toggle="tab" href="#team" role="tab" aria-controls="home" aria-selected="true">Leadership</a>
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Leadership</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="brands" data-toggle="tab" href="#brands" role="tab" aria-controls="profile" aria-selected="false">Brands</a>
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Brands</a>
           </li>
         </ul>
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="team" role="tabpanel" aria-labelledby="home-tab">
+
+        <div class="tab-content" id="teamBrandsTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row team-brands--group">
+              <div class="offset-sm-5">
+              </div>
+              <div class="col-sm-7">
+                <p><span>Dal primo aprile 2018</span> il Gruppo Sanpellegrino - Nestlé Waters Italia guida la Regione South Europe del Gruppo Nesté Waters.</p>
+              </div>
+            </div>
+
             <div class="row">
-              <div class="col-sm-5">
+              <div class="col-sm-5 team-brands--ad">
                   <figure>
-                    <img src="">
+                    <img src="images/team-braga.png">
                     <figcaption>
                       <p><span>FEDERICO SARZI BRAGA</span> Presidente e Amministratore Delegato Gruppo Sanpellegrino | Regional Business Head Nestlé Waters South Europe</p>
                     </figcaption>
                   </figure>
               </div>
-              <div class="col-sm-5">
-                <p>Dal primo aprile 2018 il Gruppo Sanpellegrino - Nestlé Waters Italia guida la Regione South Europe del Gruppo Nesté Waters.</p>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+                <ul class="team-brands--team">
+                  <li><img src="images/team-mondovi.png"><strong>GIORGIO MONDOVÌ</strong> Head of Italian Business Unit</li>
+                  <li><img src="images/team-marini.png"><strong>STEFANO MARINI</strong> Head of International Business Unit</li>
+                  <li><img src="images/team-dalfo.png"><strong>GIULIANO DAL FO</strong> Head of Finance & Control</li>
+                  <li><img src="images/team-carrello.png"><strong>GABRIELLA CARELLO</strong> Head of Human Resources</li>
+                  <li><img src="images/team-albanese.png"><strong>TIZIANA ALBANESE</strong> Head of Technical & Manufacturing</li>
+                  <li><img src="images/team-sartore.png"><strong>MAURA SARTORE</strong> Head of Supply Chain</li>
+                  <li><img src="images/team-montagner.png"><strong>STEFANIA MONTAGNER</strong> Head of Market Program</li>
+                  <li><img src="images/team-punziano.png"><strong>ANTONIO PUNZIANO</strong> Head of Public Category Affairs</li>
+                  <li><img src="images/team-kron.png"><strong>MANUELA KRON</strong> Head of Corporate Affairs</li>
+                </ul>
               </div>
             </div>
-
-            <div class="col-sm-12">
-              <ul>
-                <li><img src=""><h5>GIORGIO MONDOVÌ Head of Italian Business Unit</h5></li>
-                <li><img src=""><h5>STEFANO MARINIHead of International Business Unit</h5></li>
-                <li><img src=""><h5>GIULIANO DAL FO Head of Finance & Control</h5></li>
-                <li><img src=""><h5>GABRIELLA CARELLO Head of Human Resources</h5></li>
-                <li><img src=""><h5>TIZIANA ALBANESE Head of Technical & Manufacturing</h5></li>
-                <li><img src=""><h5>MAURA SARTORE Head of Supply Chain</h5></li>
-                <li><img src=""><h5>STEFANIA MONTAGNER Head of Market Program</h5></li>
-                <li><img src=""><h5>ANTONIO PUNZIANO Head of Public Category Affairs</h5></li>
-                <li><img src=""><h5>MANUELA KRON Head of Corporate Affairs</h5></li>
-              </ul>
-            </div>
-
           </div>
-
-          <div class="tab-pane fade" id="brands" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             <div id="brands-carousel" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <figure class="carousel-item active">
@@ -213,7 +224,7 @@
 
       </section>
 
-      <section id="share-revenues">
+      <section id="share-revenues" class="section">
         <h2>LA DISTRIBUZIONE DEL VALORE AGGIUNTO</h2>
         <div class="row">
           <div class="col-sm">
@@ -236,7 +247,7 @@
         </div>
       </section>
 
-      <section id="employees">
+      <section id="employees" class="section">
         <h2>LE PERSONE DI SANPELLEGRINO</h2>
         <div>1493 persone</div>
         <div>565 Impiegati e quadri</div>
@@ -280,7 +291,7 @@
         </div>
       </section>
 
-      <section id="safety">
+      <section id="safety" class="section">
         <h2>La sicurezza delle persone</h2>
         <p>Nel 2017 è stata confermata la certificazione OHSAS 18001 (Occupational Health and Safety Assessment Series) dei sette stabilimenti e della sede di Assago. Nel corso del 2017 si sono verificati 9 incidenti di lieve entità, a fronte dei 6 dell’anno precedente.</p>
 
@@ -289,47 +300,49 @@
         </div>
       </section>
 
-      <section id="boosting-program">
+      <section id="boosting-program" class="section">
         <h2>IL SANPELLEGRINO BOOSTING PROGRAM</h2>
-        <p>Il Gruppo Sanpellegrino insieme a H-Farm ha definito e sviluppato i diversi aspetti legati all’implementazione di un modello di business innovativo.</p>
+        <h5>Il Gruppo Sanpellegrino insieme a H-Farm ha definito e sviluppato i diversi aspetti legati all’implementazione di un modello di business innovativo.</h5>
 
         <p>Nel primo H-ACK 120 dipendenti hanno partecipato ad una maratona di idee di 24 ore, al termine della quale sono stati presentati 25 progetti. “Bot-Tle”, è diventato protagonista della seconda fase, il Rocket Program.</p>
 
         <img src="">
 
-        <video></video>
+        <video controls class="video">
+          <source src="video/Sanpellegrino-Rocket-Program.mp4" type="video/mp4">
+        </video>
       </section>
 
-      <section id="un-agenda">
-        <h2>La circolarità e l’Agenda 2030 delle Nazioni Unite</h2>
-        <p>Dal settembre 2015 le Nazioni Unite hanno approvato l’Agenda Globale per lo sviluppo sostenibile con i relativi 17 Sustainable Development Goals.</p>
+      <section id="un-agenda" class="section">
+        <h2>La circolarità e l’Agenda 2030<br> delle Nazioni Unite</h2>
+        <h5>Dal settembre 2015 le Nazioni Unite hanno approvato l’Agenda Globale per lo sviluppo sostenibile con i relativi 17 Sustainable Development Goals.</h5>
 
         <p>Il Gruppo ha condotto un’analisi di materialità che incrocia le principali responsabilità e azioni connesse al proprio business con i temi degli UN SDGs. La declinazione degli obiettivi sul business del Gruppo Sanpellegrino vede un impegno prevalente sulla Water Stewardship (SDG 6), sulla produzione e consumo responsabili (SDG 12) e sullo sviluppo socio-economico, in particolare nei nostri territori (SDG 8).</p>
 
-        <img src="">
+        <img src="images/un-goals.jpg" class="container">
 
-        <div class="un-tasks">
+        <div class="un-tasks container">
           <!-- ICONE -->
 
-          <div class="un-tasks--box">Accesso al cibo</div>
-          <div class="un-tasks--box">Sovranutrizione e malnutrizione</div>
-          <div class="un-tasks--box">Marketing responsabile</div>
-          <div class="un-tasks--box">Sicurezza degli alimenti e dei prodotti</div>
+          <div class="un-tasks--box"><p>Accesso al cibo</p></div>
+          <div class="un-tasks--box"><p>Sovranutrizione e malnutrizione</p></div>
+          <div class="un-tasks--box"><p>Marketing responsabile</p></div>
+          <div class="un-tasks--box"><p>Sicurezza degli alimenti e dei prodotti</p></div>
 
-          <div class="un-tasks--box">Benessere degli animali</div>
-          <div class="un-tasks--box">Sviluppo rurale e riduzione della povertà</div>
-          <div class="un-tasks--box">Approvvigionamento responsabile e tracciabilità</div>
-          <div class="un-tasks--box">Emancipazione femminile</div>
+          <div class="un-tasks--box"><p>Benessere degli animali</p></div>
+          <div class="un-tasks--box"><p>Sviluppo rurale e riduzione della povertà</p></div>
+          <div class="un-tasks--box active"><p>Approvvigionamento responsabile e tracciabilità</p></div>
+          <div class="un-tasks--box"><p>Emancipazione femminile</p></div>
 
-          <div class="un-tasks--box">Accesso all’acqua e a condizioni igienico - sanitarie adeguate</div>
-          <div class="un-tasks--box">Gestione responsabile dell’acqua</div>
-          <div class="un-tasks--box">Cambiamenti climatici</div>
-          <div class="un-tasks--box">Efficienza delle risorse, sprechi alimentari ed economia circolare</div>
+          <div class="un-tasks--box"><p>Accesso all’acqua e a condizioni igienico - sanitarie adeguate</p></div>
+          <div class="un-tasks--box"><p>Gestione responsabile dell’acqua</p></div>
+          <div class="un-tasks--box"><p>Cambiamenti climatici</p></div>
+          <div class="un-tasks--box"><p>Efficienza delle risorse, sprechi alimentari ed economia circolare</p></div>
 
-          <div class="un-tasks--box">Business etico</div>
-          <div class="un-tasks--box">Diritti umani</div>
-          <div class="un-tasks--box">Occupazione equa e occupazione giovanile</div>
-          <div class="un-tasks--box">Sicurezza, salute e benessere dei lavoratori</div>
+          <div class="un-tasks--box active"><p>Business etico</p></div>
+          <div class="un-tasks--box"><p>Diritti umani</p></div>
+          <div class="un-tasks--box"><p>Occupazione equa e occupazione giovanile</p></div>
+          <div class="un-tasks--box"><p>Sicurezza, salute e benessere dei lavoratori</p></div>
         </div>
       </section>
 
@@ -337,7 +350,7 @@
 
     <footer>
       <nav role="secondary-navigation">
-        <ul class="nav justify-content-center align-items-end footer-menu">
+        <ul class="nav justify-content-between align-items-end footer-menu">
           <li><a href="#">Chi Siamo</a></li>
           <li><a href="#">Fonti e territorio</a></li>
           <li><a href="#">Produzione e imbottigliamento</a></li>
@@ -379,21 +392,23 @@
     <!-- endbuild -->
 
     <!-- build:js scripts/plugins.js -->
-    <!-- <script src="/bower_components/bootstrap/js/dist/util.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script> <!-- version 3.3.1 -->
+    <script src="/bower_components/bootstrap/js/dist/util.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/carousel.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/tab.js"></script>
+    <!--
     <script src="/bower_components/bootstrap/js/dist/alert.js"></script>
     <script src="/bower_components/bootstrap/js/dist/button.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/carousel.js"></script>
+
     <script src="/bower_components/bootstrap/js/dist/collapse.js"></script>
     <script src="/bower_components/bootstrap/js/dist/dropdown.js"></script>
     <script src="/bower_components/bootstrap/js/dist/modal.js"></script>
     <script src="/bower_components/bootstrap/js/dist/scrollspy.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/tab.js"></script>
     <script src="/bower_components/bootstrap/js/dist/tooltip.js"></script>
     <script src="/bower_components/bootstrap/js/dist/popover.js"></script> -->
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script> <!-- version 3.3.1 -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
   </body>

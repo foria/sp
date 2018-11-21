@@ -71,3 +71,14 @@
 		src: $src;
 	}
 }
+
+// =============================================================================
+// Create circle dimensions and background
+// =============================================================================
+
+@mixin do-circle($size, $bg) {
+    background-color: $bg;
+
+    @include responsive-size("width", $size );
+    @include responsive-size("height", $size );
+}

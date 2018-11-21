@@ -1,3 +1,10 @@
 
-// Your variable overrides
-$body-bg: red;
+.video {
+    @include responsive-size("width", 582 );
+    @include responsive-size("margin-top", $margin-normal );
+    @include responsive-size("margin-bottom", $margin-section );
+}
+
+.fw-img {
+    width: 100%;
+}

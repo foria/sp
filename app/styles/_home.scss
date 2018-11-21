@@ -1,0 +1,167 @@
+
+.ad-msg--quote {
+    @include responsive-size("width", 470 );
+    @include responsive-size("height", 470 );
+    @include responsive-size("font-size", 26 );
+    font-weight: $font-light;
+    position: relative;
+
+    p:before,
+    p:after {
+        content: '"';
+        display: block;
+        text-align: center;
+        line-height: 1;
+        color: map-get($theme-colors, primary);
+        @include responsive-size("font-size", 64 );
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    p:before {
+        transform: translate(-50%, -36%);
+    }
+
+    strong {
+        display: block;
+        text-transform: uppercase;
+        color: map-get($theme-colors, primary);
+    }
+}
+
+.ad-msg--name {
+    @include responsive-size("width", 210 );
+    @include responsive-size("height", 210 );
+
+    small {
+        display: block;
+        @include responsive-size("font-size", 14 );
+        font-weight: $font-light;
+    }
+}
+
+#about {
+    p {
+        @include responsive-size("font-size", 23 );
+    }
+}
+
+.about--revenue {
+    @include do-circle(304, #4e5594);
+    @include responsive-size("font-size", 26 );
+    font-weight: $font-light;
+
+    strong {
+        display: block;
+        font-weight: $font-light;
+        @include responsive-size("font-size", 52 );
+    }
+}
+
+.about--year {
+    //@include do-circle(200);
+    @include responsive-size("font-size", 52 );
+    font-weight: $font-light;
+}
+
+.team-brands--group {
+    border: 2px dotted map-get($theme-colors, secondary);
+    border-width: 2px 0;
+    padding: 18px;
+    @include responsive-size("font-size", 15 );
+    text-align: left;
+    @include responsive-size("margin-top", $margin-double );
+
+    span {
+        @include responsive-size("font-size", 26 );
+        display: block;
+    }
+}
+
+.team-brands--ad {
+    @include responsive-size("font-size", 13 );
+    border-right: 1px solid map-get($theme-colors, primary);
+    @include responsive-size("margin-top", -112 );
+
+    img {
+        @include responsive-size("width", 141 );
+        height: auto;
+        @include responsive-size("margin-bottom", $margin-normal );
+        @include responsive-size("margin-top", -44 );
+    }
+
+    span {
+        @include responsive-size("font-size", 15 );
+        display: block;
+    }
+}
+
+.team-brands--team {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    text-align: left;
+    @include responsive-size("margin-top", $margin-double );
+
+    img {
+        @include responsive-size("width", 90 );
+        height: auto;
+        float: left;
+        margin-right: 7px;
+    }
+
+    li {
+        flex-basis: 33.333%;
+        @include responsive-size("font-size", 11 );
+        padding-right: 7%;
+        @include responsive-size("margin-bottom", $margin-normal );
+
+        &:nth-child(3n+1){
+            transform: translatey(50%);
+        }
+
+        &:nth-child(3n){
+            transform: translatey(-50%);
+        }
+    }
+
+    strong {
+        @include responsive-size("font-size", 13 );
+        margin-bottom: 0;
+        @include responsive-size("margin-top", 5 );
+        padding-right: 12%;
+    }
+}
+
+.un-tasks {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &--box {
+        flex-basis: 24%;
+        @include responsive-size("height", 56 );
+        background-color: map-get($theme-colors, secondary);
+        margin-bottom: 1.2%;
+        border-radius: 10px;
+        display: table;
+        opacity: .2;
+
+        &.active {
+            background-color: map-get($theme-colors, primary);
+            opacity: 1;
+        }
+
+        p {
+            display: table-cell;
+            vertical-align: middle;
+            @include responsive-size("font-size", 12.5 );
+            color: white;
+            text-transform: uppercase;
+        }
+    }
+}

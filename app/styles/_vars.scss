@@ -7,30 +7,18 @@ $body-bg: #f6f3e8;
 // COLORS
 $theme-colors: (
     primary: #e30520,
-    secondary: #00295a,
+    secondary: #00295a
 );
 
+$fonti: #a18b52;
+$fonti-secondary: #295942;
 
-    // fonti: (
-    //   primary: #e30520,
-    //   secondary: #00295a
-    // ),
-    // produzione: (
-    //   primary: #e30520,
-    //   secondary: #00295a
-    // ),
-    // logistica: (
-    //   primary: #e30520,
-    //   secondary: #00295a
-    // ),
-    // consumo: (
-    //   primary: #e30520,
-    //   secondary: #00295a
-    // ),
-    // riciclo: (
-    //   primary: #e30520,
-    //   secondary: #00295a
-    // )
+$produzione: #79901a;
+$logistica: #62acd0;
+$consumo: #ac9ead;
+$riciclo: #ceb112;
+
+$grey-text: #7d7d7d;
 
 // breakpoints
 $grid-breakpoints: (
@@ -48,3 +36,19 @@ $container-max-widths: (
   lg: 820px,
   xl: 1640px
 );
+
+// fonts
+$font: Museo;
+$font-normal: 500;
+$font-light: 300;
+$font-bold: 700;
+$font-size-lg: 18;
+$line-height: 1.4;
+
+// margins
+$margin-normal: $font-size-lg * $line-height;
+$margin-double: $margin-normal * 2;
+$margin-section: $margin-normal * 6;
+
+// section elements
+$section-title-border-width: 726;

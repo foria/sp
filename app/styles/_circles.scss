@@ -1,0 +1,25 @@
+
+.circle {
+    border-radius: 50%;
+    display: block;
+    color: white;
+    position: relative;
+
+    > * {
+        padding: 16%;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+    }
+}
+
+.circle-primary {
+    background-color: map-get($theme-colors, primary);
+}
+
+.circle-secondary {
+    background-color: map-get($theme-colors, secondary);
+}

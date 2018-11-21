@@ -1,0 +1,33 @@
+
+.section {
+    @include responsive-size("margin-top", $margin-section );
+    @include responsive-size("margin-bottom", $margin-section );
+    position: relative;
+
+    h5,
+    p {
+        @include responsive-size("max-width", $section-title-border-width );
+        margin: 0 auto;
+        @include responsive-size("margin-bottom", $margin-normal );
+    }
+}
+
+.dashed-box {
+    border: 3px dotted;
+    border-radius: 40px;
+    padding: 2em 7em;
+    @include responsive-size("margin-bottom", $margin-normal );
+
+    p {
+        margin-bottom: 0;
+    }
+
+    strong {
+        @include responsive-size("font-size", 40 );
+        display: block;
+    }
+
+    .rrrr-page & {
+        border-color: $riciclo;
+    }
+}
