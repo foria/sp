@@ -9,11 +9,14 @@
     .nav-link {
         @extend h2;
         border: 0;
-        padding: 0;
 
         &:before,
         &:after {
             width: 100%;
+        }
+
+        .icon-star-blu {
+            background-color: transparent;
         }
 
         &.active {
@@ -22,6 +25,10 @@
             &:before,
             &:after {
                 background-color: map-get($theme-colors, primary);
+            }
+
+            .icon-star-blu {
+                background-image: url(../images/star.svg);
             }
         }
 

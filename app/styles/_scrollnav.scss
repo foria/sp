@@ -1,0 +1,71 @@
+
+/* No Touch devices */
+
+#cd-vertical-nav {
+    position: fixed;
+    right: 40px;
+    @include center(y); // see partials > _mixins.scss
+    z-index: 1;
+
+    ul {
+        list-style: none;
+        line-height: 1;
+    }
+
+    li {
+        text-align: right;
+    }
+
+    a {
+        display: inline-block;
+        @include clearfix;
+
+        /* prevent weird movements on hover when you use a CSS3 transformation - webkit browsers */
+        backface-visibility: hidden;
+
+        span {
+            float: right;
+            display: inline-block;
+        }
+
+        &:hover .cd-dot {
+            background-color: map-get($theme-colors, primary);
+        }
+
+        .cd-label {
+            transform: scale(.6);
+        }
+        &:hover .cd-label {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        &.is-selected .cd-dot {
+            background-color: map-get($theme-colors, primary);
+        }
+    }
+
+    .cd-dot {
+        position: relative;
+        /* we set a top value in order to align the dot with the label. If you change label's font, you may need to change this top value*/
+        top: 8px;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 1px solid map-get($theme-colors, primary);
+        transition: transform 0.2s, background-color 0.5s;
+        transform-origin: 50% 50%;
+    }
+
+    .cd-label {
+        position: relative;
+        margin-right: 10px;
+        padding: .4em .5em;
+        color: map-get($theme-colors, primary);
+        @include responsive-size("font-size", 14 );
+        transition: transform 0.2s, opacity 0.2s;
+        opacity: 0;
+        transform-origin: 100% 50%;
+    }
+}

@@ -1,10 +1,23 @@
 
+.ad-msg--img {
+    position: relative;
+    @include clearfix();
+
+    img {
+        @include responsive-size("width", 333 );
+        position: absolute;
+        top: 5%;
+        left: 6%;
+        z-index: 10;
+    }
+
+}
 .ad-msg--quote {
     @include responsive-size("width", 470 );
     @include responsive-size("height", 470 );
     @include responsive-size("font-size", 26 );
     font-weight: $font-light;
-    position: relative;
+    float: right;
 
     p:before,
     p:after {
@@ -32,6 +45,10 @@
 .ad-msg--name {
     @include responsive-size("width", 210 );
     @include responsive-size("height", 210 );
+    position: absolute;
+    bottom: -10%;
+    left: 26%;
+    z-index: 11;
 
     small {
         display: block;
@@ -40,10 +57,15 @@
     }
 }
 
+.bg-map {
+    background: url(../images/home/mappa.svg) no-repeat;
+    background-size: 100% auto;
+    background-position: 30px -90px;
+    padding-top: 100px;
+}
+
 #about {
-    p {
-        @include responsive-size("font-size", 23 );
-    }
+    margin-top: 0;
 }
 
 .about--revenue {
@@ -72,6 +94,11 @@
     text-align: left;
     @include responsive-size("margin-top", $margin-double );
 
+    p {
+        padding: 0 10%;
+        margin-bottom: 0;
+    }
+
     span {
         @include responsive-size("font-size", 26 );
         display: block;
@@ -81,13 +108,13 @@
 .team-brands--ad {
     @include responsive-size("font-size", 13 );
     border-right: 1px solid map-get($theme-colors, primary);
-    @include responsive-size("margin-top", -112 );
+    @include responsive-size("margin-top", -132 );
 
     img {
         @include responsive-size("width", 141 );
         height: auto;
-        @include responsive-size("margin-bottom", $margin-normal );
-        @include responsive-size("margin-top", -44 );
+        @include responsive-size("margin-bottom", 45.2 );
+        @include responsive-size("margin-top", -34 );
     }
 
     span {
@@ -132,6 +159,57 @@
         margin-bottom: 0;
         @include responsive-size("margin-top", 5 );
         padding-right: 12%;
+        display: block;
+    }
+}
+
+#brands-carousel {
+    @include responsive-size("margin-top", $margin-double );
+
+    figure {
+        text-align: left;
+    }
+
+    img {
+        @include responsive-size("width", 336 );
+    }
+
+    figcaption {
+        position: absolute;
+        @include center(y);
+        @include responsive-size("left", 350 );
+        width: 50%;
+    }
+
+    h3 {
+        color: map-get($theme-colors, primary);
+    }
+}
+
+#share-revenues.section {
+    > h2:first-child {
+        margin-bottom: 0;
+
+        &:after {
+            content: none;
+        }
+    }
+}
+
+.share-revenues--img {
+    @include responsive-size("width", 733 );
+}
+
+#employees {
+    img {
+        @include responsive-size("margin-bottom", $margin-normal );
+    }
+}
+
+#boosting-program {
+    img {
+        @include responsive-size("margin-top", $margin-double );
+        @include responsive-size("margin-bottom", $margin-double );
     }
 }
 
@@ -142,6 +220,23 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
+    &--icons {
+        list-style: none;
+        flex-basis: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+
+        li {
+            flex-basis: 15%;
+            margin-bottom: 2%;
+            cursor: pointer;
+        }
+    }
+
     &--box {
         flex-basis: 24%;
         @include responsive-size("height", 56 );
@@ -151,8 +246,11 @@
         display: table;
         opacity: .2;
 
-        &.active {
+        &.box-red {
             background-color: map-get($theme-colors, primary);
+        }
+
+        &.active {
             opacity: 1;
         }
 

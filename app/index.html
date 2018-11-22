@@ -24,10 +24,13 @@
     <header>
 
       <nav class="container main-header">
+        <a href"/" class="logo"></a>
         <ul class="nav justify-content-end align-items-center front-menu">
-          <li><a href="#"><icon class="facebook"></icon></a></li>
-          <li><a href="#"><icon class="linkedin"></icon></a></li>
-          <li><a href="#"><icon class="youtube"></icon></a></li>
+          <!-- <li><a href="#" class="icon-social facebook" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 35" enable-background="new 0 0 18 35"><style type="text/css">.st0{fill:#F3352F;}</style><path class="st0" d="M11.6 34.7v-15.8h5.3l.8-6.2h-6.1v-3.9c0-1.8.5-3 3-3h3.2v-5.6c-.5 0-2.4-.2-4.6-.2-4.7 0-7.9 2.9-7.9 8.2v4.5h-5.3v6.2h5.3v15.8h6.3z"/></svg></a></li> -->
+
+          <li><a href="https://www.linkedin.com/company/gruppo-sanpellegrino-the-future-we-share/" class="icon-social linkedin" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M27.8 17.2v10.2h-6v-9.5c0-2.4-.9-4-3-4-1.6 0-2.6 1.1-3.1 2.2-.2.4-.2.9-.2 1.4v10h-6s.1-16.2 0-17.8h6v2.6-.1c.8-1.2 2.2-2.9 5.4-2.9 4-.1 6.9 2.4 6.9 7.9zm-24.4-16.2c-2.1 0-3.4 1.3-3.4 3.1 0 1.7 1.3 3.1 3.3 3.1 2.1 0 3.4-1.4 3.4-3.1 0-1.8-1.3-3.1-3.3-3.1zm-3 26.4h6v-17.8h-6v17.8z"/></svg></a></li>
+
+          <!-- <li><a href="#" class="icon-social youtube" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 30"><path d="M39 11.8c0-.8-.1-1.8-.2-3s-.3-2.3-.5-3.2c-.2-1.1-.7-2-1.5-2.7-.8-.7-1.7-1.2-2.7-1.3-3.2-.4-8-.6-14.6-.6-6.5 0-11.4.2-14.6.5-1 .2-1.9.6-2.7 1.3-.8.8-1.3 1.7-1.5 2.7-.2 1-.4 2-.5 3.2-.1 1.3-.2 2.3-.2 3.1v6.6c0 .8.1 1.8.2 3s.3 2.3.5 3.2c.2 1.1.7 2 1.5 2.7.8.7 1.7 1.2 2.7 1.3 3.2.4 8.1.5 14.6.5s11.4-.2 14.6-.5c1-.1 1.9-.5 2.7-1.3.8-.7 1.3-1.6 1.5-2.7.2-1 .4-2 .5-3.2.1-1.2.2-2.2.2-3v-3.3c.1-1.4.1-2.5 0-3.3zm-11.8 4.4l-11.2 7c-.2.1-.5.2-.7.2-.2 0-.4-.1-.7-.2-.5-.3-.7-.7-.7-1.2v-14c0-.6.2-1 .7-1.2.5-.3 1-.2 1.4 0l11.2 7c.4.3.7.6.7 1.2s-.2 1-.7 1.2zm0 0"/></svg></a></li> -->
           <li class="nav-trigger js_navbar">
             <span></span><span></span><span></span>
           </li>
@@ -39,7 +42,6 @@
           <span></span><span></span><span></span>
         </div>
         <ul class="container">
-          <li><a href="#">Home</a></li>
           <li><a href="#" data-bg="rgba(0, 41, 90, .95)" class="active">Chi Siamo</a></li>
           <li><a href="#" data-bg="rgba(217, 192, 134, .95)">Fonti e territorio</a></li>
           <li><a href="#" data-bg="rgba(180, 204, 111, .95)">Produzione e imbottigliamento</a></li>
@@ -60,8 +62,8 @@
 
       <section id="ad-msg" class="container section">
         <h2>Insieme per una bella azienda</h2>
-        <figure>
-          <img src="ad" />
+        <figure class="ad-msg--img">
+          <img src="images/home/bragas.png">
           <figcaption>
             <div class="ad-msg--quote circle circle-secondary"><p>Con questo documento vi accompagniamo alla scoperta del nostro modo di lavorare, sperando che anche voi possiate apprezzare ciò che insieme facciamo per costruire ogni giorno una <strong>“bella azienda”.</strong></p></div>
             <div class="ad-msg--name circle circle-primary"><p>FEDERICO<br> SARZI BRAGA <small>Presidente e Amministratore Delegato</small></p></div>
@@ -69,35 +71,28 @@
         </figure>
       </section>
 
-      <section id="about" class="section">
-        <h1>Chi Siamo</h1>
-        <h2>Il gruppo San Pellegrino</h2>
-        <p>Dal 1899 portiamo prodotti di alta qualità alle persone e alcune delle eccellenze del nostro Paese in oltre 150 nazioni del mondo attraverso i nostri brand.</p>
-        <div class="about--year circle"><p><span>Fatturato realizzato</span>2017</p></div>
-        <div class="about--revenue circle"><p><strong>895</strong>milioni di euro con 3,7 miliardi di bottiglie prodotte</p></div>
-        <div class="about--world circle">SANPELLEGRINO NEL MONDO</div>
-      </section>
+      <div class="bg-map">
+        <h1><icon class="icon-star"></icon>Chi Siamo<icon class="icon-star"></icon></h1>
 
-      <section id="world-map" class="section">
-        <p>NORD AMERICA +9,8% <span>vs 2016</span></p>
-        <p>SUD AMERICA +18,4% <span>vs 2016</span></p>
-        <p>EUROPA +4,2% <span>vs 2016</span></p>
-        <p>AFRICA +13,8% <span>vs 2016</span></p>
-        <p>ASIA e OCEANIA +6,7% <span>vs 2016</span></p>
-      </section>
+        <section id="about" class="section">
+          <h2>Il gruppo San Pellegrino<icon class="icon-star-blu"></icon></h2>
+          <p class="bigger">Dal 1899 portiamo prodotti di alta qualità alle persone e alcune delle eccellenze del nostro Paese in oltre 150 nazioni del mondo attraverso i nostri brand.</p>
+          <img src="images/home/fatturatorealizzato.svg">
+        </section>
+      </div>
 
       <section id="team-brands" class="section container">
         <ul class="nav nav-tabs" id="teamBrandsTab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Leadership</a>
+            <a class="nav-link active" id="team-tab" data-toggle="tab" href="#team" role="tab" aria-controls="home" aria-selected="true">La Leadership<icon class="icon-star-blu"></icon></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Brands</a>
+            <a class="nav-link" id="brands-tab" data-toggle="tab" href="#brands" role="tab" aria-controls="profile" aria-selected="false">Brands<icon class="icon-star-blu"></icon></a>
           </li>
         </ul>
 
         <div class="tab-content" id="teamBrandsTabContent">
-          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="tab-pane fade show active" id="team" role="tabpanel" aria-labelledby="team-tab">
             <div class="row team-brands--group">
               <div class="offset-sm-5">
               </div>
@@ -109,7 +104,7 @@
             <div class="row">
               <div class="col-sm-5 team-brands--ad">
                   <figure>
-                    <img src="images/team-braga.png">
+                    <img src="images/home/team-braga.png">
                     <figcaption>
                       <p><span>FEDERICO SARZI BRAGA</span> Presidente e Amministratore Delegato Gruppo Sanpellegrino | Regional Business Head Nestlé Waters South Europe</p>
                     </figcaption>
@@ -120,24 +115,25 @@
             <div class="row">
               <div class="col-sm-12">
                 <ul class="team-brands--team">
-                  <li><img src="images/team-mondovi.png"><strong>GIORGIO MONDOVÌ</strong> Head of Italian Business Unit</li>
-                  <li><img src="images/team-marini.png"><strong>STEFANO MARINI</strong> Head of International Business Unit</li>
-                  <li><img src="images/team-dalfo.png"><strong>GIULIANO DAL FO</strong> Head of Finance & Control</li>
-                  <li><img src="images/team-carrello.png"><strong>GABRIELLA CARELLO</strong> Head of Human Resources</li>
-                  <li><img src="images/team-albanese.png"><strong>TIZIANA ALBANESE</strong> Head of Technical & Manufacturing</li>
-                  <li><img src="images/team-sartore.png"><strong>MAURA SARTORE</strong> Head of Supply Chain</li>
-                  <li><img src="images/team-montagner.png"><strong>STEFANIA MONTAGNER</strong> Head of Market Program</li>
-                  <li><img src="images/team-punziano.png"><strong>ANTONIO PUNZIANO</strong> Head of Public Category Affairs</li>
-                  <li><img src="images/team-kron.png"><strong>MANUELA KRON</strong> Head of Corporate Affairs</li>
+                  <li><img src="images/home/team-mondovi.png"><strong>GIORGIO MONDOVÌ</strong> Head of Italian Business Unit</li>
+                  <li><img src="images/home/team-marini.png"><strong>STEFANO MARINI</strong> Head of International Business Unit</li>
+                  <li><img src="images/home/team-dalfo.png"><strong>GIULIANO DAL FO</strong> Head of Finance & Control</li>
+                  <li><img src="images/home/team-carrello.png"><strong>GABRIELLA CARELLO</strong> Head of Human Resources</li>
+                  <li><img src="images/home/team-albanese.png"><strong>TIZIANA ALBANESE</strong> Head of Technical & Manufacturing</li>
+                  <li><img src="images/home/team-sartore.png"><strong>MAURA SARTORE</strong> Head of Supply Chain</li>
+                  <li><img src="images/home/team-montagner.png"><strong>STEFANIA MONTAGNER</strong> Head of Market Program</li>
+                  <li><img src="images/home/team-punziano.png"><strong>ANTONIO PUNZIANO</strong> Head of Public Category Affairs</li>
+                  <li><img src="images/home/team-kron.png"><strong>MANUELA KRON</strong> Head of Corporate Affairs</li>
                 </ul>
               </div>
             </div>
           </div>
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+          <div class="tab-pane fade" id="brands" role="tabpanel" aria-labelledby="brands-tab">
             <div id="brands-carousel" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <figure class="carousel-item active">
-                  <img class="d-block w-40" src="...">
+                  <img src="images/home/spellegrino.jpg">
                   <figcaption>
                     <h3>S.PELLEGRINO</h3>
                     <p>L’acqua ambasciatrice dell’eccellenza italiana.</p>
@@ -145,14 +141,14 @@
                   </figcaption>
                 </figure>
                 <figure class="carousel-item">
-                  <img class="d-block w-40" src="...">
+                  <img src="images/home/belte.jpg">
                   <figcaption>
                     <h3>BELTÈ</h3>
                     <p>Stile di vita “naturale” con la Linea Bio senza zuccheri e dolcificanti, certificata da BioAgricert.</p>
                   </figcaption>
                 </figure>
                 <figure class="carousel-item">
-                  <img class="d-block w-40" src="...">
+                  <img src="images/home/panna.jpg">
                   <figcaption>
                     <h3>ACQUA PANNA</h3>
                     <p>Il gusto della Toscana sulle tavole di tutto il mondo.</p>
@@ -160,14 +156,14 @@
                   </figcaption>
                 </figure>
                 <figure class="carousel-item">
-                  <img class="d-block w-40" src="...">
+                  <img src="images/home/bitter.jpg">
                   <figcaption>
                     <h3>SANBITTÈR</h3>
                     <p>Il vero aperitivo all’italiana. Emblema dell’autentico aperitivo italiano, sinonimo di convivialità e alta qualità.</p>
                   </figcaption>
                 </figure>
                 <figure class="carousel-item">
-                  <img class="d-block w-40" src="...">
+                  <img src="images/home/levissima.jpg">
                   <figcaption>
                     <h3>LEVISSIMA</h3>
                     <p>La purezza della montagna nel cuore.</p>
@@ -175,14 +171,14 @@
                   </figcaption>
                 </figure>
                 <figure class="carousel-item">
-                  <img class="d-block w-40" src="...">
+                  <img src="images/home/gingerino.jpg">
                   <figcaption>
                     <h3>GINGERINO</h3>
                     <p>La forza della genuinità. Storico aperitivo del Triveneto, al cui territorio e alle cui tradizioni ancora legato da una forte relazione.</p>
                   </figcaption>
                 </figure>
                 <figure class="carousel-item">
-                  <img class="d-block w-40" src="...">
+                  <img src="images/home/vera.jpg">
                   <figcaption>
                     <h3>NESTLÉ VERA</h3>
                     <p>Per un futuro sempre più “sano”.</p>
@@ -190,21 +186,21 @@
                   </figcaption>
                 </figure>
                 <figure class="carousel-item">
-                  <img class="d-block w-40" src="...">
+                  <img src="images/home/brillante.jpg">
                   <figcaption>
                     <h3>ACQUA BRILLANTE</h3>
                     <p>Tradizione dissetante. Una tradizione italiana, nata da un marchio storico che risale al 1954 e preparata con un’antica ricetta tuttora segreta.</p>
                   </figcaption>
                 </figure>
                 <figure class="carousel-item">
-                  <img class="d-block w-40" src="...">
+                  <img src="images/home/sanpellegrino.jpg">
                   <figcaption>
                     <h3>BIBITE SANPELLEGRINO</h3>
                     <p>Il valore delle tipicit. agricole italiane. Una vasta gamma di bibite con una lunga storia, iniziata nel 1932 con l’Aranciata Sanpellegrino, che contiene solo arance 100% italiane.</p>
                   </figcaption>
                 </figure>
                 <figure class="carousel-item">
-                  <img class="d-block w-40" src="...">
+                  <img src="images/home/nestea.jpg">
                   <figcaption>
                     <h3>NESTEA</h3>
                     <p>Gusto autentico e rinfrescante con una nuova ricetta più semplice e con ingredienti selezionati. Foglie di tè provenienti dal Nilgiri, India, con certificazione Rainforest Alliance.</p>
@@ -225,126 +221,144 @@
       </section>
 
       <section id="share-revenues" class="section">
-        <h2>LA DISTRIBUZIONE DEL VALORE AGGIUNTO</h2>
-        <div class="row">
-          <div class="col-sm">
-            <h4>2016 Mln di €</h4>
-            <div>911.312</div>
-            <div>885.959</div>
-            <div>25.353</div>
-          </div>
-          <div class="col-sm">
-            <div>VALORE ECONOMICO GENERATO DAL GRUPPO</div>
-            <div>VALORE ECONOMICO DISTRIBUITO DAL GRUPPO</div>
-            <div>VALORE ECONOMICO TRATTENUTO DAL GRUPPO</div>
-          </div>
-          <div class="col-sm">
-            <h4>2017 Mln di €</h4>
-            <div>919.295</div>
-            <div>902.008</div>
-            <div>17.287</div>
-          </div>
-        </div>
+        <h2>LA DISTRIBUZIONE DEL VALORE AGGIUNTO<icon class="icon-star-blu"></icon></h2>
+        <img src="../images/home/distribuzionedelvaloreaggiunto.svg" class="share-revenues--img">
       </section>
 
-      <section id="employees" class="section">
-        <h2>LE PERSONE DI SANPELLEGRINO</h2>
-        <div>1493 persone</div>
-        <div>565 Impiegati e quadri</div>
-        <div>54 dirigenti</div>
-        <div>874 operai e intermedi</div>
-
+      <section id="employees" class="section container">
+        <h2>LE PERSONE DI SANPELLEGRINO<icon class="icon-star-blu"></icon></h2>
+        <img src="../images/home/persone.svg">
         <p>Le persone di Sanpellegrino sono il cuore, la forza, la passione dell’azienda. Il coinvolgimento diretto delle persone dell’azienda gioca un ruolo importante nello sviluppo aziendale. Determinanti sono le politiche di genere e di work life balance, grazie ad un programma di smart working che coinvolge tutti i livelli (con una media di 4.100 ore al mese nel 2017).</p>
-
-        <div class="row">
-          <div class="col-sm-6">
-            <h4>EQUILIBRIO DI GENERE</h4>
-            <div class="row">
-              <div class="col-sm-6">
-                <div>25,8%</div>
-                <p>Donne sulla popolazione complessiva</p>
-              </div>
-              <div class="col-sm-6">
-                <div>74,2%</div>
-                <p>Uomini sulla popolazione complessiva</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
-            <h4>LEADERSHIP</h4>
-            <div class="row">
-              <div class="col-sm-6">
-                <figure>
-                  <img src="">
-                  <div>50% Donne tra i dirigenti</div>
-                </figure>
-              </div>
-              <div class="col-sm-6">
-                <figure>
-                  <img src="">
-                  <div>50% Uomini tra i dirigenti</div>
-                </figure>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img src="../images/home/leadership.svg">
       </section>
 
-      <section id="safety" class="section">
-        <h2>La sicurezza delle persone</h2>
+      <section id="safety" class="section container">
+        <h2>La sicurezza delle persone<icon class="icon-star-blu"></icon></h2>
         <p>Nel 2017 è stata confermata la certificazione OHSAS 18001 (Occupational Health and Safety Assessment Series) dei sette stabilimenti e della sede di Assago. Nel corso del 2017 si sono verificati 9 incidenti di lieve entità, a fronte dei 6 dell’anno precedente.</p>
-
-        <div class="chart">
-
-        </div>
+        <img src="../images/home/andamentoindicidisicurezza.svg">
       </section>
 
-      <section id="boosting-program" class="section">
-        <h2>IL SANPELLEGRINO BOOSTING PROGRAM</h2>
-        <h5>Il Gruppo Sanpellegrino insieme a H-Farm ha definito e sviluppato i diversi aspetti legati all’implementazione di un modello di business innovativo.</h5>
+      <section id="boosting-program" class="section container">
+        <h2>IL SANPELLEGRINO BOOSTING PROGRAM<icon class="icon-star-blu"></icon></h2>
+        <p class="bigger"><strong>Il Gruppo Sanpellegrino insieme a H-Farm ha definito e sviluppato i diversi aspetti legati all’implementazione di un modello di business innovativo.</strong></p>
 
         <p>Nel primo H-ACK 120 dipendenti hanno partecipato ad una maratona di idee di 24 ore, al termine della quale sono stati presentati 25 progetti. “Bot-Tle”, è diventato protagonista della seconda fase, il Rocket Program.</p>
 
-        <img src="">
+        <img src="../images/home/hfarm.jpg">
 
         <video controls class="video">
           <source src="video/Sanpellegrino-Rocket-Program.mp4" type="video/mp4">
         </video>
       </section>
 
-      <section id="un-agenda" class="section">
+      <section id="un-agenda" class="section container">
         <h2>La circolarità e l’Agenda 2030<br> delle Nazioni Unite</h2>
         <h5>Dal settembre 2015 le Nazioni Unite hanno approvato l’Agenda Globale per lo sviluppo sostenibile con i relativi 17 Sustainable Development Goals.</h5>
 
         <p>Il Gruppo ha condotto un’analisi di materialità che incrocia le principali responsabilità e azioni connesse al proprio business con i temi degli UN SDGs. La declinazione degli obiettivi sul business del Gruppo Sanpellegrino vede un impegno prevalente sulla Water Stewardship (SDG 6), sulla produzione e consumo responsabili (SDG 12) e sullo sviluppo socio-economico, in particolare nei nostri territori (SDG 8).</p>
 
-        <img src="images/un-goals.jpg" class="container">
+        <img src="images/home/un-goals.jpg">
 
         <div class="un-tasks container">
           <!-- ICONE -->
+          <ul class="un-tasks--icons">
+            <li data-box="1,6,8,9,14,15"><img src="images/home/un-1.jpg"></li>
+            <li data-box="1,2,6,8,9,10,11,12"><img src="images/home/un-2.jpg"></li>
 
-          <div class="un-tasks--box"><p>Accesso al cibo</p></div>
-          <div class="un-tasks--box"><p>Sovranutrizione e malnutrizione</p></div>
-          <div class="un-tasks--box"><p>Marketing responsabile</p></div>
-          <div class="un-tasks--box"><p>Sicurezza degli alimenti e dei prodotti</p></div>
+            <li data-box="1,2,3,4,5,8,9,16"><img src="images/home/un-3.jpg"></li>
 
-          <div class="un-tasks--box"><p>Benessere degli animali</p></div>
-          <div class="un-tasks--box"><p>Sviluppo rurale e riduzione della povertà</p></div>
-          <div class="un-tasks--box active"><p>Approvvigionamento responsabile e tracciabilità</p></div>
-          <div class="un-tasks--box"><p>Emancipazione femminile</p></div>
+            <li data-box="3,6,15"><img src="images/home/un-4.jpg"></li>
+            <li data-box="1,2,6,8,14,15"><img src="images/home/un-5.jpg"></li>
 
-          <div class="un-tasks--box"><p>Accesso all’acqua e a condizioni igienico - sanitarie adeguate</p></div>
-          <div class="un-tasks--box"><p>Gestione responsabile dell’acqua</p></div>
-          <div class="un-tasks--box"><p>Cambiamenti climatici</p></div>
-          <div class="un-tasks--box"><p>Efficienza delle risorse, sprechi alimentari ed economia circolare</p></div>
+            <li data-box="6,9,10,11,16"><img src="images/home/un-6.jpg"></li>
+            <li data-box="11,12"><img src="images/home/un-7.jpg"></li>
 
-          <div class="un-tasks--box active"><p>Business etico</p></div>
-          <div class="un-tasks--box"><p>Diritti umani</p></div>
-          <div class="un-tasks--box"><p>Occupazione equa e occupazione giovanile</p></div>
-          <div class="un-tasks--box"><p>Sicurezza, salute e benessere dei lavoratori</p></div>
+            <li data-box="6,8,13,14,15,16"><img src="images/home/un-8.jpg"></li>
+            <li data-box="6,11,12"><img src="images/home/un-9.jpg"></li>
+
+            <li data-box="1,2,6,8,14,15"><img src="images/home/un-10.jpg"></li>
+            <li data-box="12,"><img src="images/home/un-11.jpg"></li>
+
+            <li data-box="2,3,7,10,11,12"><img src="images/home/un-12.jpg"></li>
+            <li data-box="1,3,10,11,12"><img src="images/home/un-13.jpg"></li>
+
+            <li data-box="1,7,9,10,12"><img src="images/home/un-14.jpg"></li>
+            <li data-box="1,7,10,11,12"><img src="images/home/un-15.jpg"></li>
+
+            <li data-box="6,"><img src="images/home/un-16.jpg"></li>
+            <li data-box="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"><img src="images/home/un-17.jpg"></li>
+
+            <li><img src="images/home/un-goals-small.jpg"></li>
+          </ul>
+
+          <div data-boxnum="1" class="un-tasks--box"><p>Accesso al cibo</p></div>
+          <div data-boxnum="2" class="un-tasks--box"><p>Sovranutrizione e malnutrizione</p></div>
+          <div data-boxnum="3" class="un-tasks--box"><p>Marketing responsabile</p></div>
+          <div data-boxnum="4" class="un-tasks--box"><p>Sicurezza degli alimenti e dei prodotti</p></div>
+
+          <div data-boxnum="5" class="un-tasks--box"><p>Benessere degli animali</p></div>
+          <div data-boxnum="6" class="un-tasks--box"><p>Sviluppo rurale e riduzione della povertà</p></div>
+          <div data-boxnum="7" class="un-tasks--box"><p>Approvvigionamento responsabile e tracciabilità</p></div>
+          <div data-boxnum="8" class="un-tasks--box"><p>Emancipazione femminile</p></div>
+
+          <div data-boxnum="9" class="un-tasks--box box-red"><p>Accesso all’acqua e a condizioni igienico - sanitarie adeguate</p></div>
+          <div data-boxnum="10" class="un-tasks--box box-red"><p>Gestione responsabile dell’acqua</p></div>
+          <div data-boxnum="11" class="un-tasks--box"><p>Cambiamenti climatici</p></div>
+          <div data-boxnum="12" class="un-tasks--box box-red"><p>Efficienza delle risorse, sprechi alimentari ed economia circolare</p></div>
+
+          <div data-boxnum="13" class="un-tasks--box"><p>Business etico</p></div>
+          <div data-boxnum="14" class="un-tasks--box"><p>Diritti umani</p></div>
+          <div data-boxnum="15" class="un-tasks--box"><p>Occupazione equa e occupazione giovanile</p></div>
+          <div data-boxnum="16" class="un-tasks--box"><p>Sicurezza, salute e benessere dei lavoratori</p></div>
         </div>
       </section>
+
+      <nav id="cd-vertical-nav">
+        <ul>
+          <li>
+            <a href="#ad-msg" data-number="1">
+              <span class="cd-dot"></span>
+              <span class="cd-label">Messaggio dell’AD</span>
+            </a>
+          </li>
+          <li>
+            <a href="#about" data-number="2">
+              <span class="cd-dot"></span>
+              <span class="cd-label">Il gruppo SanPellegrino</span>
+            </a>
+          </li>
+          <li>
+            <a href="#team-brands" data-number="3">
+              <span class="cd-dot"></span>
+              <span class="cd-label">La leadership | I marchi</span>
+            </a>
+          </li>
+          <li>
+            <a href="#share-revenues" data-number="4">
+              <span class="cd-dot"></span>
+              <span class="cd-label">La distribuzione del lavore aggiunto</span>
+            </a>
+          </li>
+          <li>
+            <a href="#employees" data-number="5">
+              <span class="cd-dot"></span>
+              <span class="cd-label">Le Persone SanPellegrino</span>
+            </a>
+          </li>
+          <li>
+            <a href="#boosting-program" data-number="6">
+              <span class="cd-dot"></span>
+              <span class="cd-label">Il SanPellegrino Boosting Program</span>
+            </a>
+          </li>
+          <li>
+            <a href="#un-agenda" data-number="7">
+              <span class="cd-dot"></span>
+              <span class="cd-label">La circolarità</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
 
     </div>
 

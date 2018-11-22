@@ -1,1 +1,0 @@
-"use strict";jQuery(function(n){n(document).ready(function(){n(".nav-trigger").on("click",function(){n("body").toggleClass("menu-opened"),n(".nav-menu").fadeToggle(200)});var e;n(".nav-menu li a").hover(function(){(e=n(this).data("bg"))&&n(".nav-menu").css("backgroundColor",e)})})});

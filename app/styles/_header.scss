@@ -35,6 +35,17 @@ body.menu-opened {
     // @include media-breakpoint-up(lg) { ... }
 }
 
+.logo {
+    display: inline-block;
+    @include responsive-size("width", 98 );
+    @include responsive-size("height", 98 );
+    background: url("../images/logo.svg") center no-repeat;
+    background-size: contain;
+    position: absolute;
+    @include responsive-size("left", 20 );
+    @include responsive-size("bottom", -50 );
+}
+
 .front-menu {
     height: 100%;
 }
@@ -45,7 +56,8 @@ body.menu-opened {
     @include responsive-size("height", 15 );
     cursor: pointer;
     transition: top .1s ease-in-out;
-    margin-top: -4px;
+    @include responsive-size("margin-top", -8 );
+    @include responsive-size("margin-left", 20 );
     z-index: ($zindex-modal+1);
 
     span {

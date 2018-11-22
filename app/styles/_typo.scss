@@ -45,6 +45,13 @@ h1 {
     @include responsive-size("font-size", 52 );
     letter-spacing: 4px;
     margin-bottom: 1em;
+
+    .icon-star {
+        @include responsive-size("width", 54 );
+        @include responsive-size("height", 54 );
+        margin: 0 7px;
+        transform: translateY(-18%);
+    }
 }
 
 h2 {
@@ -109,7 +116,9 @@ h5 {
 
 .section {
 
-    &:not(#page-title) > :first-child {
+    &:not(#page-title) > h2:first-child,
+    &:not(#page-title) > h3:first-child,
+    .nav-link {
         @include responsive-size("line-height", 34 );
         @include responsive-size("margin-bottom", $margin-normal );
         @include responsive-size("padding-top", 24 );
@@ -124,7 +133,7 @@ h5 {
             left: 50%;
             transform: translatex(-50%);
             @include responsive-size("width", $section-title-border-width );
-            height: 2px;
+            @include responsive-size("height", 1 );
             background-color: map-get($theme-colors, secondary);
         }
 
@@ -174,16 +183,27 @@ h5 {
         span {
             color: $grey-text;
         }
+
+        .icon-star-blu {
+            @include responsive-size("width", 38 );
+            @include responsive-size("height", 38 );
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -60%);
+            background-color: $body-bg;
+        }
     }
 
     p {
         strong {
             font-weight: $font-normal;
+            color: map-get($theme-colors, primary);
         }
 
         &.bigger {
             @include responsive-size("font-size", 23 );
-            color: map-get($theme-colors, primary);
+            color: map-get($theme-colors, secondary);
         }
 
         .ft-page & {
