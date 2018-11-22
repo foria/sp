@@ -1,0 +1,36 @@
+
+.nav-tabs {
+    border: 0;
+
+    .nav-item {
+        width: 50%;
+    }
+
+    .nav-link {
+        @extend h2;
+        border: 0;
+
+        &:before,
+        &:after {
+            width: 100%;
+        }
+
+        .icon-star-blu {
+            background-color: transparent;
+        }
+
+        &.active {
+            color: map-get($theme-colors, primary);
+
+            &:before,
+            &:after {
+                background-color: map-get($theme-colors, primary);
+            }
+
+            .icon-star-blu {
+                background-image: url(../images/star.svg);
+            }
+        }
+
+    }
+}
