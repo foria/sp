@@ -54,12 +54,12 @@ jQuery(function($){
         if(window.innerWidth > 1024) {
             window.addEventListener('scroll', function(e) {
                 if ($(document).scrollTop() > 300) {
-                    $('body').addClass("sticky-header");
-                    $('.wheel').removeClass("animate");
+                    $('body').addClass('sticky-header');
+                    $('.wheel').removeClass('animate');
                     $('#cd-vertical-nav').addClass('show-nav');
                 } else {
-                    $('body').removeClass("sticky-header");
-                    $('.wheel').addClass("animate");
+                    $('body').removeClass('sticky-header');
+                    $('.wheel').addClass('animate');
                     $('#cd-vertical-nav').removeClass('show-nav');
                 }
             });
