@@ -29,18 +29,18 @@ icon {
     }
 
 
-    &.facebook {
-        @include responsive-size("width", 8 );
-        @include responsive-size("height", 14 );
-    }
+    // &.facebook {
+    //     @include responsive-size("width", 8 );
+    //     @include responsive-size("height", 14 );
+    // }
 
     &.linkedin {
         @include responsive-size("width", 12 );
         @include responsive-size("height", 11 );
     }
 
-    &.youtube {
-        @include responsive-size("width", 16 );
-        @include responsive-size("height", 12 );
-    }
+    // &.youtube {
+    //     @include responsive-size("width", 16 );
+    //     @include responsive-size("height", 12 );
+    // }
 }

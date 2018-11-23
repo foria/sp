@@ -1,3 +1,94 @@
 
-// Your variable overrides
-$body-bg: red;
+
+
+#brands-carousel {
+    @include responsive-size("margin-top", $margin-double );
+
+    @include media-breakpoint-down(md) {
+        padding: 0 5%;
+    }
+
+    figure {
+        text-align: left;
+
+        @include media-breakpoint-down(sm) {
+            text-align: center;
+        }
+    }
+
+    img {
+        @include responsive-size("width", 336 );
+
+        @include media-breakpoint-down(md) {
+            width: 40%;
+            margin-bottom: 30px;
+        }
+    }
+
+    figcaption {
+        position: absolute;
+        @include center(y);
+        @include responsive-size("left", 400 );
+        width: 50%;
+
+        @include media-breakpoint-down(md) {
+            left: 50%;
+        }
+
+        @include media-breakpoint-down(sm) {
+            position: static;
+            width: 100%;
+            transform: none;
+        }
+    }
+
+    h3 {
+        color: map-get($theme-colors, primary);
+    }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 10;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    border: solid map-get($theme-colors, primary);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    @include responsive-size("padding", 25 );
+    background: none;
+}
+
+.carousel-control-next {
+    right: -15%;
+
+    @include media-breakpoint-down(md) {
+        right: -5%;
+    }
+
+    @include media-breakpoint-down(sm) {
+        right: 0;
+    }
+}
+
+.carousel-control-next-icon {
+    transform: rotate(-45deg);
+}
+
+.carousel-control-prev {
+    left: -15%;
+
+    @include media-breakpoint-down(md) {
+        left: -5%;
+    }
+
+    @include media-breakpoint-down(sm) {
+        left: 0;
+    }
+}
+
+.carousel-control-prev-icon {
+    transform: rotate(135deg);
+}

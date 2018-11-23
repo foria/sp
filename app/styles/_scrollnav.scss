@@ -7,9 +7,15 @@
     @include center(y); // see partials > _mixins.scss
     z-index: 1;
 
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+
     ul {
         list-style: none;
         line-height: 1;
+        padding: 0;
+        margin: 0;
     }
 
     li {

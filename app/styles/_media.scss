@@ -4,7 +4,8 @@ img {
 }
 
 .video {
-    @include responsive-size("width", 582 );
+    width: 100%;
+    @include responsive-size("max-width", 582 );
     @include responsive-size("margin-top", $margin-normal );
     // @include responsive-size("margin-bottom", $margin-section );
 }

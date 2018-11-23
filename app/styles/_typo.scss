@@ -46,17 +46,32 @@ h1 {
     letter-spacing: 4px;
     margin-bottom: 1em;
 
+    @include media-breakpoint-down(md) {
+        font-size: 40px;
+    }
+
     .icon-star {
         @include responsive-size("width", 54 );
         @include responsive-size("height", 54 );
         margin: 0 7px;
         transform: translateY(-18%);
+
+        @include media-breakpoint-down(md) {
+            width: 30px;
+            height: 30px;
+        }
     }
+
 }
 
 h2 {
     @include responsive-size("font-size", 34 );
     letter-spacing: 4px;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 22px;
+        letter-spacing: 2px;
+    }
 }
 
 h3,
@@ -125,6 +140,10 @@ h5 {
         @include responsive-size("padding-bottom", 24 );
         position: relative;
 
+        @include media-breakpoint-down(sm) {
+            padding: 13px 0;
+        }
+
         &:before,
         &:after {
             content: "";
@@ -132,7 +151,8 @@ h5 {
             position: absolute;
             left: 50%;
             transform: translatex(-50%);
-            @include responsive-size("width", $section-title-border-width );
+            width: 95%;
+            @include responsive-size("max-width", $section-title-border-width );
             @include responsive-size("height", 1 );
             background-color: map-get($theme-colors, secondary);
         }
@@ -184,7 +204,7 @@ h5 {
             color: $grey-text;
         }
 
-        .icon-star-blu {
+        icon[class*="icon-star"] {
             @include responsive-size("width", 38 );
             @include responsive-size("height", 38 );
             position: absolute;
@@ -192,6 +212,12 @@ h5 {
             left: 50%;
             transform: translate(-50%, -60%);
             background-color: $body-bg;
+
+            @include media-breakpoint-down(md) {
+                width: 24px;
+                height: 24px;
+            }
+
         }
     }
 

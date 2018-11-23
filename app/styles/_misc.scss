@@ -4,6 +4,10 @@
     @include responsive-size("margin-bottom", $margin-section );
     position: relative;
 
+    @include media-breakpoint-down(md) {
+        margin: 100px auto;
+    }
+
     h5,
     p {
         @include responsive-size("max-width", $section-title-border-width );

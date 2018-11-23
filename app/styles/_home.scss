@@ -9,6 +9,16 @@
         top: 5%;
         left: 6%;
         z-index: 10;
+
+        @include media-breakpoint-down(md) {
+            left: 0;
+        }
+
+        @include media-breakpoint-down(sm) {
+            width: 40vw;
+            top: 0;
+            left: -6%;
+        }
     }
 
 }
@@ -18,6 +28,14 @@
     @include responsive-size("font-size", 26 );
     font-weight: $font-light;
     float: right;
+
+    @include media-breakpoint-down(sm) {
+        width: 70vw;
+        height: 70vw;
+        max-width: 470px;
+        max-height: 470px;
+        font-size: 15px;
+    }
 
     p:before,
     p:after {
@@ -50,6 +68,18 @@
     left: 26%;
     z-index: 11;
 
+    @include media-breakpoint-down(md) {
+        left: 10%;
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 35vw;
+        height: 35vw;
+        left: -3%;
+        bottom: -10%;
+        font-size: 14px;
+    }
+
     small {
         display: block;
         @include responsive-size("font-size", 14 );
@@ -62,6 +92,11 @@
     background-size: 100% auto;
     background-position: 30px -90px;
     padding-top: 100px;
+
+    @include media-breakpoint-down(md) {
+        background: none;
+        padding-top: 0;
+    }
 }
 
 #about {
@@ -97,6 +132,10 @@
     p {
         padding: 0 10%;
         margin-bottom: 0;
+
+        @include media-breakpoint-down(sm) {
+            padding: 0;
+        }
     }
 
     span {
@@ -110,11 +149,24 @@
     border-right: 1px solid map-get($theme-colors, primary);
     @include responsive-size("margin-top", -132 );
 
+    @include media-breakpoint-down(sm) {
+        margin-top: -254px;
+    }
+
+    figure, p {
+        margin: 0;
+    }
+
     img {
         @include responsive-size("width", 141 );
         height: auto;
         @include responsive-size("margin-bottom", 45.2 );
         @include responsive-size("margin-top", -34 );
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 5.2px;
+            margin-top: -54px;
+        }
     }
 
     span {
@@ -132,6 +184,10 @@
     text-align: left;
     @include responsive-size("margin-top", $margin-double );
 
+    @include media-breakpoint-down(md) {
+        margin-top: 100px;
+    }
+
     img {
         @include responsive-size("width", 90 );
         height: auto;
@@ -144,6 +200,12 @@
         @include responsive-size("font-size", 11 );
         padding-right: 7%;
         @include responsive-size("margin-bottom", $margin-normal );
+
+        @include media-breakpoint-down(md) {
+            flex-basis: 33%;
+            justify-content: space-between;
+            padding-right: 0;
+        }
 
         &:nth-child(3n+1){
             transform: translatey(50%);
@@ -163,29 +225,6 @@
     }
 }
 
-#brands-carousel {
-    @include responsive-size("margin-top", $margin-double );
-
-    figure {
-        text-align: left;
-    }
-
-    img {
-        @include responsive-size("width", 336 );
-    }
-
-    figcaption {
-        position: absolute;
-        @include center(y);
-        @include responsive-size("left", 350 );
-        width: 50%;
-    }
-
-    h3 {
-        color: map-get($theme-colors, primary);
-    }
-}
-
 #share-revenues.section {
     > h2:first-child {
         margin-bottom: 0;
@@ -198,12 +237,62 @@
 
 .share-revenues--img {
     @include responsive-size("width", 733 );
+
+    @include media-breakpoint-down(md) {
+        width: 95%;
+    }
 }
 
 #employees {
     img {
         @include responsive-size("margin-bottom", $margin-normal );
     }
+}
+
+.safetyy--chart {
+    position: relative;
+
+    figcaption {
+        position: absolute;
+        top: 12%;
+        left: 9%;
+        overflow: hidden;
+
+        svg {
+            @include responsive-size("width", 608 );
+
+            @include media-breakpoint-down(md) {
+                width: 100%;
+            }
+        }
+
+        svg:first-child path {
+            fill: #5565FB;
+        }
+        svg:last-child path {
+            fill: #4E5594;
+        }
+    }
+}
+
+[data-aos="chart-animation"] {
+
+    figcaption {
+        width: 0;
+        transition: width .7s ease-out;
+
+        @include media-breakpoint-down(md) {
+            width: 77%;
+        }
+    }
+
+
+    &.aos-animate {
+        figcaption {
+            width: 77%;
+        }
+    }
+
 }
 
 #boosting-program {
@@ -234,6 +323,10 @@
             flex-basis: 15%;
             margin-bottom: 2%;
             cursor: pointer;
+
+            @include media-breakpoint-down(sm) {
+                flex-basis: 33%;
+            }
         }
     }
 
@@ -245,6 +338,10 @@
         border-radius: 10px;
         display: table;
         opacity: .2;
+
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
 
         &.box-red {
             background-color: map-get($theme-colors, primary);

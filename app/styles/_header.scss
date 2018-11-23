@@ -114,25 +114,78 @@ body.menu-opened {
         @include responsive-size("top", 25);
         left: calc( 50% + #{map-get($container-max-widths, lg) / 2} - 26px );
         transform: translateX(-100%);
+
+        @include media-breakpoint-down(md) {
+            left: auto;
+            right: 16px;
+        }
     }
 
     ul {
         list-style-type: none;
         @include responsive-size("margin-top", 80 );
         @include responsive-size("margin-top", 10, vh );
-        padding: 0;
+        @include responsive-size("padding-left", 10, % );
         width: 100%;
         transition: opacity .35s, visibility .35s, height .35s;
+        opacity: 0;
+
+        body.menu-opened & {
+            opacity: 1;
+        }
 
         li {
             @include responsive-size("margin-bottom", 4, vh );
+            position: relative;
+
+            &:before {
+                display: block;
+                position: absolute;
+                top: -6px;
+                left: 0;
+                transform: translatex(-120%);
+                background: url('../images/arrow_menu.svg')  center no-repeat;
+                @include responsive-size("width", 58 );
+                @include responsive-size("height", 46 );
+            }
+
+            &:not(:last-child):hover:before {
+                content: "";
+            }
+
+            &:last-child {
+                margin-top: 10vh;
+
+                svg {
+                    @include responsive-size("width", 25 );
+                    @include responsive-size("height", 24 );
+                    position: absolute;
+                    top: -2px;
+                    left: 0;
+                    transform: translatex(-120%);
+
+                    path {
+                        fill: white;
+                    }
+                }
+                a {
+                    @include responsive-size("font-size", 18 );
+                }
+
+                &:hover {
+                    svg path {
+                        fill: map-get($theme-colors, primary);
+                    }
+                }
+            }
+
         }
 
         a {
             position:relative;
             color: $white;
             text-decoration: none;
-            font-size: 27px;
+            @include responsive-size("font-size", 27 );
 
             &:hover {
                 color: map-deep-get($theme-colors, primary);
