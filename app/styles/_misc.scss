@@ -1,4 +1,8 @@
 
+body {
+    @include responsive-size("padding-top", $margin-double );
+}
+
 .section {
     @include responsive-size("margin-top", $margin-section );
     @include responsive-size("margin-bottom", $margin-section );

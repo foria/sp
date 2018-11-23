@@ -6,9 +6,14 @@
     right: 40px;
     @include center(y); // see partials > _mixins.scss
     z-index: 1;
+    display: none;
 
     @include media-breakpoint-down(md) {
         display: none;
+    }
+
+    &.show-nav {
+        display: block;
     }
 
     ul {

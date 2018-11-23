@@ -11,7 +11,6 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/aos/dist/aos.css">
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -43,7 +42,7 @@
           <span></span><span></span><span></span>
         </div>
         <ul class="container">
-          <li><a href="#" data-bg="rgba(0, 41, 90, .95)" class="active">Chi Siamo</a></li>
+          <li class="active"><a href="#" data-bg="rgba(0, 41, 90, .95)">Chi Siamo</a></li>
           <li><a href="#" data-bg="rgba(217, 192, 134, .95)">Fonti e territorio</a></li>
           <li><a href="#" data-bg="rgba(180, 204, 111, .95)">Produzione e imbottigliamento</a></li>
           <li><a href="#" data-bg="rgba(130, 195, 227, .95)">Trasproti e logistica</a></li>
@@ -56,7 +55,20 @@
     </header>
 
     <section class="wheel-container container">
-      <div class="wheel"></div>
+      <div class="wheel animate">
+        <div class="wheel--one"></div>
+        <div class="wheel--two"></div>
+        <div class="wheel--three"></div>
+        <div class="wheel--four"></div>
+      </div>
+
+      <div class="wheel--text">
+        <p><strong>THE FUTURE WE SHARE</strong> CSV REPORT UPDATE 2018</p>
+      </div>
+
+      <div class="wheel--help">
+        <p>Clicca sull’infografica<br> e ruotala sul tuo obiettivo</p>
+      </div>
     </section>
 
     <div role="main">
@@ -387,7 +399,8 @@
       <div class="copyright">
         <p>SANPELLEGRINO S.P.A.<br> Sanpellegrino S.p.A. – Via del Mulino, 6 - 20090 Assago (Mi) Italia - P.I. 00777280157</p>
 
-        <img src="">
+        <img src="/images/logo_footer.svg" class="logo-footer">
+
         <ul class="nav justify-content-center">
           <li><a href="#"><icon class="facebook"></icon></a></li>
           <li><a href="#"><icon class="linkedin"></icon></a></li>

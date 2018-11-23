@@ -14,8 +14,13 @@ body.menu-opened {
     position: fixed;
     top: 0;
     left: 50%;
-    transform: translatex(-50%);
-    z-index: $zindex-modal;
+    transform: translate(-50%, -220%);
+    transition: transform .5s ease-out;
+    z-index: $zindex-modal - 2;
+
+    .sticky-header & {
+        transform: translate(-50%, 0);
+    }
 
     &:before {
         content: "";
@@ -36,7 +41,8 @@ body.menu-opened {
 }
 
 .logo {
-    display: inline-block;
+    display: none;
+    //display: inline-block;
     @include responsive-size("width", 98 );
     @include responsive-size("height", 98 );
     background: url("../images/logo.svg") center no-repeat;
@@ -149,7 +155,8 @@ body.menu-opened {
                 @include responsive-size("height", 46 );
             }
 
-            &:not(:last-child):hover:before {
+            &:not(:last-child):hover:before,
+            &.active:before {
                 content: "";
             }
 
@@ -179,6 +186,10 @@ body.menu-opened {
                 }
             }
 
+            &.active a {
+                color: map-deep-get($theme-colors, primary);
+            }
+
         }
 
         a {
@@ -190,20 +201,6 @@ body.menu-opened {
             &:hover {
                 color: map-deep-get($theme-colors, primary);
             }
-            &.active {
-                color: map-deep-get($theme-colors, primary);
-            }
         }
-    }
-}
-
-@keyframes fadeInRight {
-    0% {
-        opacity: 0;
-        left: 20%;
-    }
-    100% {
-        opacity: 1;
-        left: 0;
     }
 }

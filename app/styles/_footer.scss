@@ -78,8 +78,13 @@
 .copyright {
     text-align: center;
     margin-bottom: 150px;
+    @include responsive-size("font-size", 13);
 }
 
 .sn-links {
     list-style: none;
+}
+
+.logo-footer {
+    @include responsive-size("width", 145);
 }

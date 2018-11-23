@@ -1,3 +1,155 @@
+.wheel-container {
+    @include responsive-size("height", 543 );
+    position: relative;
 
-// Your variable overrides
-$body-bg: red;
+    &:after {
+        content: "";
+        width: 100%;
+        display: block;
+        position: absolute;
+        bottom: -10%;
+        background: url(../images/home/scroll_down.svg) center no-repeat;
+        background-size: contain;
+        @include responsive-size("height", 26 );
+
+        .sticky-header & {
+            display: none;
+        }
+    }
+}
+
+.wheel {
+    position: relative;
+    @include responsive-size("width", 522 );
+    @include responsive-size("height", 543 );
+    @include responsive-size("margin-left", -100 );
+    transition: width .5s ease-in-out, height .5s ease-in-out;
+    transform: translate3d(0,0,0);
+    will-change: width, height;
+
+    [class*="wheel--"] {
+        position: absolute;
+        left: 0;
+        @include center(y);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+    }
+
+    &--one {
+        background-image: url(../images/ruota_01.svg);
+    }
+
+    &--two {
+        background-image: url(../images/ruota_02.svg);
+        opacity: 0;
+    }
+
+    &--three {
+        background-image: url(../images/ruota_03.svg);
+        opacity: 0;
+    }
+
+    &--four {
+        background-image: url(../images/ruota_04.svg);
+        opacity: 0;
+    }
+
+    &.animate {
+
+        .wheel--two {
+            animation: .3s ease-out;
+            animation-name: wFadeIn, w2Scale;
+            animation-fill-mode: forwards;
+            animation-delay: .5s;
+        }
+
+        .wheel--three {
+            animation: .3s ease-out;
+            animation-name: wFadeIn, w3Scale;
+            animation-fill-mode: forwards;
+            animation-delay: 1s;
+        }
+
+        .wheel--four {
+            animation: wFadeIn .7s ease-in-out;
+            animation-fill-mode: forwards;
+            animation-delay: 1.5s;
+        }
+    }
+
+    .sticky-header & {
+        position: fixed;
+        left: calc( 50% - #{map-get($container-max-widths, lg) / 2} + 22px );
+        top: -31px;
+        @include responsive-size("width", 190 );
+        @include responsive-size("height", 186 );
+        z-index: $zindex-modal - 1;
+        @include responsive-size("margin-left", -50 );
+    }
+}
+
+@keyframes w2Scale {
+    from {
+        transform: translatey(-50%) scale(.6);
+    }
+    to {
+        transform: translatey(-50%) scale(1);
+    }
+}
+
+@keyframes w3Scale {
+    from {
+        transform: translatey(-50%) scale(.8);
+    }
+    to {
+        transform: translatey(-50%) scale(1);
+    }
+}
+
+@keyframes wFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.wheel--text {
+    position: absolute;
+    left: 80%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    @include responsive-size("font-size", 25 );
+    font-weight: $font-light;
+    text-align: center;
+
+    p {
+        white-space: nowrap;
+    }
+
+    strong {
+        display: block;
+        @include responsive-size("font-size", 34 );
+    }
+}
+
+.wheel--help {
+    position: absolute;
+    left: 80%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    @include responsive-size("font-size", 13 );
+    text-align: center;
+    background: url(../images/home/mano_scroll.svg) top center no-repeat;
+    background-size: auto 26px;
+    padding-top: 35px;
+    text-transform: uppercase;
+
+    p {
+        white-space: nowrap;
+    }
+}
