@@ -1,4 +1,14 @@
 
+.pi-page {
+    #page-title {
+        background-image: url(../images/pi/titolo.svg);
+    }
+}
+
+.soste-img {
+    @include responsive-size('width', 657);
+}
+
 #spellegrino {
     background: url(../images/pi/montagne.jpg) center no-repeat;
     background-size: cover;

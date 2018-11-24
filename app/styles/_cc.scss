@@ -1,0 +1,16 @@
+
+.cc-page {
+    #page-title {
+        background-image: url(../images/cc/titolo.svg);
+    }
+}
+
+.ovali-img {
+    position: absolute;
+    bottom: 20px;
+    @include center(x);
+}
+
+.muba-img {
+    @include responsive-size('width', 916);
+}

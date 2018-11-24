@@ -9,7 +9,7 @@
     display: none;
 
     @include media-breakpoint-down(md) {
-        display: none;
+        display: none !important;
     }
 
     &.show-nav {

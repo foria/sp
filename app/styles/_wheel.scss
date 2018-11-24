@@ -2,6 +2,14 @@
     @include responsive-size("height", 543 );
     position: relative;
 
+    @include media-breakpoint-down(md) {
+        height: 353px;
+    }
+
+    @include media-breakpoint-down(md) {
+        height: auto;
+    }
+
     &:after {
         content: "";
         width: 100%;
@@ -12,9 +20,18 @@
         background-size: contain;
         @include responsive-size("height", 26 );
 
+        @include media-breakpoint-down(sm) {
+            width: 88%;
+        }
+
         .sticky-header & {
             display: none;
         }
+
+    }
+
+    .sticky-header & {
+        padding-top: 353px;
     }
 }
 
@@ -23,9 +40,17 @@
     @include responsive-size("width", 522 );
     @include responsive-size("height", 543 );
     @include responsive-size("margin-left", -100 );
-    transition: width .5s ease-in-out, height .5s ease-in-out;
+    transition: width .5s ease-in-out, height .5s ease-in-out, opacity .1s;
     transform: translate3d(0,0,0);
     will-change: width, height;
+    //animation: fadeWheel .1s;
+    transition-delay: 0s, 0s, 0s;
+
+    @include media-breakpoint-down(md) {
+        width: 345px;
+        height: 353px;
+        margin-left: 0;
+    }
 
     [class*="wheel--"] {
         position: absolute;
@@ -36,6 +61,10 @@
         background-size: contain;
         width: 100%;
         height: 100%;
+        z-index: 10;
+        will-change: opacity;
+        // -webkit-backface-visibility: hidden;
+        // backface-visibility: hidden;
     }
 
     &--one {
@@ -67,16 +96,22 @@
         }
 
         .wheel--three {
-            animation: .3s ease-out;
+            animation: .5s ease-in;
             animation-name: wFadeIn, w3Scale;
             animation-fill-mode: forwards;
-            animation-delay: 1s;
+            animation-delay: .8s;
         }
 
         .wheel--four {
             animation: wFadeIn .7s ease-in-out;
             animation-fill-mode: forwards;
             animation-delay: 1.5s;
+        }
+
+        .wheel--slicies {
+            // animation: wFadeIn .7s ease-in-out;
+            // animation-fill-mode: forwards;
+            // animation-delay: 1.5s;
         }
     }
 
@@ -86,8 +121,25 @@
         top: -31px;
         @include responsive-size("width", 190 );
         @include responsive-size("height", 186 );
-        z-index: $zindex-modal - 1;
+        //z-index: $zindex-modal - 1;
         @include responsive-size("margin-left", -50 );
+        opacity: 0;
+        transition-delay: 0s, 0s, .5s;
+
+        @include media-breakpoint-down(md) {
+            margin-left: 0;
+        }
+    }
+
+    &.hover {
+        .wheel--one,
+        .wheel--two,
+        .wheel--three,
+        .wheel--four {
+            -webkit-animation-fill-mode: backwards;
+            animation-fill-mode: backwards;
+            opacity: .2;
+        }
     }
 }
 
@@ -118,6 +170,83 @@
     }
 }
 
+.wheel--slicies {
+    z-index: 11 !important;
+    opacity: 0;
+
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+
+    .sticky-header & {
+        display: none;
+    }
+
+    .wheel.hover & {
+        opacity: 1;
+        svg {
+            > a {
+                opacity: .2;
+            }
+        }
+    }
+
+    svg {
+        > a {
+            -webkit-backface-visibility: hidden;
+            &:hover,
+            &.hover {
+                opacity: 1 !important;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .st0{display:none;}
+    .st1{display:inline;fill:none;stroke:#1D1D1B;stroke-width:0.75;stroke-miterlimit:10;}
+    .st2{display:inline;fill:none;stroke:#12100B;stroke-width:0.9789;stroke-miterlimit:10;}
+    .st3{display:inline;}
+    .st4{fill:none;stroke:#1D1D1B;stroke-miterlimit:10;}
+    .st5{fill:none;stroke:#1D1D1B;stroke-miterlimit:10;stroke-dasharray:3.3404,3.3404;}
+    .st6{display:inline;fill:#1D1D1B;}
+    .st7{display:inline;opacity:0.13;}
+    .st8{fill:#009C3D;}
+    .st9{fill:#EE7900;}
+    .st10{fill:none;stroke:#ECECEC;stroke-width:0.7403;stroke-miterlimit:10;}
+    .st11{fill:#EBEAE9;}
+    .st12{fill:#FFFFFF;}
+    .st13{fill:#E30520;}
+    .st14{fill:#00295A;}
+    .st15{display:inline;fill:#00295A;}
+    .st16{fill:none;stroke:#1D1D1B;stroke-miterlimit:10;stroke-dasharray:3.3312,3.3312;}
+    .st17{display:inline;fill:none;stroke:#F6CB37;stroke-miterlimit:10;}
+    .st18{display:inline;fill:none;stroke:#AC9EAD;stroke-miterlimit:10;}
+    .st19{display:inline;fill:none;stroke:#82C3E3;stroke-miterlimit:10;}
+    .st20{display:inline;fill:none;stroke:#B4CC6F;stroke-miterlimit:10;}
+    .st21{display:inline;fill:none;stroke:#D9C086;stroke-miterlimit:10;}
+    .st22{fill:#E40077;}
+    .st23{display:inline;fill:#00883D;}
+    .st24{display:inline;fill:#EB6508;}
+    .st25{display:inline;fill:#AC9EAD;}
+    .st26{display:inline;fill:#D9C086;}
+    .st27{display:inline;fill:#82C3E3;}
+    .st28{display:inline;fill:#F6CB37;}
+    .st29{display:inline;fill:#B4CC6F;}
+    .st30{fill:#00883D;}
+    .st31{fill:none;stroke:#D9C086;stroke-miterlimit:10;}
+    .st32{fill:none;stroke:#1D1D1B;stroke-width:0.75;stroke-miterlimit:10;}
+    .st33{fill:#D9C086;}
+    .st34{fill:none;stroke:#AC9EAD;stroke-miterlimit:10;}
+    .st35{fill:#AC9EAD;}
+    .st36{fill:#EB6508;}
+    .st37{fill:none;stroke:#B4CC6F;stroke-miterlimit:10;}
+    .st38{fill:#B4CC6F;}
+    .st39{fill:none;stroke:#F6CB37;stroke-miterlimit:10;}
+    .st40{fill:#F6CB37;}
+    .st41{fill:none;stroke:#82C3E3;stroke-miterlimit:10;}
+    .st42{fill:#82C3E3;}
+}
+
 .wheel--text {
     position: absolute;
     left: 80%;
@@ -127,6 +256,17 @@
     font-weight: $font-light;
     text-align: center;
 
+    @include media-breakpoint-down(md) {
+        left: 75%;
+        font-size: 20px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        margin-top: 25px;
+        position: static;
+        transform: none;
+    }
+
     p {
         white-space: nowrap;
     }
@@ -134,6 +274,10 @@
     strong {
         display: block;
         @include responsive-size("font-size", 34 );
+
+        @include media-breakpoint-down(md) {
+            font-size: 24px;
+        }
     }
 }
 
@@ -148,6 +292,15 @@
     background-size: auto 26px;
     padding-top: 35px;
     text-transform: uppercase;
+
+    @include media-breakpoint-down(md) {
+        left: 75%;
+    }
+
+    @include media-breakpoint-down(sm) {
+        position: static;
+        transform: none;
+    }
 
     p {
         white-space: nowrap;

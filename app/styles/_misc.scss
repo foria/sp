@@ -1,6 +1,7 @@
 
 body {
     @include responsive-size("padding-top", $margin-double );
+    overflow-x: hidden;
 }
 
 .section {
@@ -38,4 +39,45 @@ body {
     .rrrr-page & {
         border-color: $riciclo;
     }
+}
+
+#wheel-model {
+    background: url(../images/bg_model.jpg) top center no-repeat;
+    background-size: contain;
+    @include responsive-size("height", 586 );
+
+    .p-fold {
+        @include responsive-size("height", 53 );
+        position: relative;
+        overflow: hidden;
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            @include responsive-size("height", 8 );
+            background: rgb(246,243,232);
+            background: linear-gradient(180deg, rgba(246,243,232,0.4) 0%, rgba(246,243,232,0.5) 100%);
+            z-index: 1;
+        }
+    }
+
+    .div-toggler {
+        border: solid map-get($theme-colors, primary);
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+    }
+}
+
+#page-title {
+    margin-top: 0;
+    @include responsive-size("padding-top", 272 );
+    background-repeat: no-repeat;
+    background-size: 1100px auto;
+    background-position: -20% 0;
 }

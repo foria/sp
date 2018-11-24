@@ -14,6 +14,60 @@ icon {
     background-image: url(../images/star-blu.svg);
 }
 
+.icon-star-gold {
+    background-image: url(../images/star-gold.svg);
+}
+
+.icon-star-green {
+    background-image: url(../images/star-green.svg);
+}
+
+.icon-star-turquoise {
+    background-image: url(../images/star-turqoise.svg);
+}
+
+.icon-star-yellow {
+    background-image: url(../images/star-yellow.svg);
+}
+
+
+.icon-levissima {
+    background-image: url(../images/ft/logolevissima.svg);
+    @include responsive-size("width", 176 );
+    @include responsive-size("height", 72 );
+    transform: translate(-50%, -70%);
+}
+
+.icon-sanpellegrino {
+    background-image: url(../images/brands/sanpellegrino.jpg);
+    @include responsive-size("width", 170 );
+    @include responsive-size("height", 113 );
+    transform: translate(-50%, -74%);
+}
+
+.icon-spellegrino {
+    background-image: url(../images/brands/spellegrino.svg);
+    @include responsive-size("width", 170 );
+    @include responsive-size("height", 76 );
+    transform: translate(-50%, -86%);
+    background-size: 90% auto;
+}
+
+.icon-panna {
+    background-image: url(../images/brands/panna.svg);
+    @include responsive-size("width", 172 );
+    @include responsive-size("height", 63 );
+    transform: translate(-50%, -72%);
+    background-size: 90% auto;
+}
+
+.icon-vera {
+    background-image: url(../images/brands/vera.jpg);
+    @include responsive-size("width", 92 );
+    @include responsive-size("height", 94 );
+    transform: translate(-50%, -72%);
+}
+
 .icon-social {
     display: inline-block;
     @include responsive-size("margin-right", 12 );

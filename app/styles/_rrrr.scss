@@ -1,0 +1,26 @@
+
+.rrrr-page {
+    #page-title {
+        background-image: url(../images/rrrr/titolo.svg);
+    }
+}
+
+.euplastic {
+    @include responsive-size('width', 460);
+}
+
+.bottiglia-vera {
+    @include responsive-size('width', 112);
+    position: absolute;
+    bottom: 0;
+    @include center(x);
+    @include responsive-size('margin-left', 30);
+}
+
+.bottiglia-lev {
+    @include responsive-size('width', 136);
+    position: absolute;
+    bottom: 0;
+    @include center(x);
+    @include responsive-size('margin-left', 30);
+}

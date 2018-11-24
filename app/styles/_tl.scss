@@ -1,0 +1,35 @@
+
+.tl-page {
+    #page-title {
+        background-image: url(../images/tl/titolo.svg);
+    }
+}
+
+.truck-img {
+    @include responsive-size('width', 510);
+    @include responsive-size('margin-bottom', $margin-normal);
+}
+
+.treno {
+    display: block;
+    @include responsive-size('width', 514);
+    @include responsive-size('margin-bottom', $margin-normal);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.risultati-img {
+    @include responsive-size('width', 710);
+}
+
+.compraverde {
+    @include responsive-size('width', 200);
+    @include responsive-size('margin-bottom', $margin-normal);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sedex {
+    @include responsive-size('width', 895);
+}

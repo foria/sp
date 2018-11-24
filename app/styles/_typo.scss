@@ -8,6 +8,7 @@ body {
     font-family: $font;
     font-weight: $font-normal;
     @include responsive-size("font-size", $font-size-lg );
+    letter-spacing: 2px;
     line-height: 1.4;
     text-align: center;
     color: map-get($theme-colors, secondary);
@@ -87,6 +88,7 @@ h3 {
         font-weight: $font-light;
         padding: 2em 0;
         position: relative;
+        @include responsive-size("margin-top", $margin-normal );
 
         &:before {
             content: "";
@@ -155,6 +157,7 @@ h5 {
             @include responsive-size("max-width", $section-title-border-width );
             @include responsive-size("height", 1 );
             background-color: map-get($theme-colors, secondary);
+            z-index: 1;
         }
 
         &:before {
@@ -163,6 +166,12 @@ h5 {
 
         &:after {
             bottom: 0;
+        }
+
+        &.hassub {
+            &:after {
+                content: none;
+            }
         }
 
         .ft-page & {
@@ -202,22 +211,57 @@ h5 {
 
         span {
             color: $grey-text;
+
+            &.subtext {
+                color: map-get($theme-colors, primary);
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 93%;
+                transform: translate(-50%, 50%);
+                white-space: nowrap;
+                @include responsive-size("font-size", 23 );
+                z-index: 2;
+                overflow: hidden;
+
+                &:before,
+                &:after {
+                    content: "";
+                    display: inline-block;
+                    width: 27%;
+                    @include responsive-size("height", 1 );
+                    background-color: map-get($theme-colors, secondary);
+                    vertical-align: middle;
+                }
+
+                // &:before {
+                //     top: 0;
+                // }
+
+                // &:after {
+                //     bottom: 0;
+                // }
+            }
         }
 
         icon[class*="icon-star"] {
             @include responsive-size("width", 38 );
             @include responsive-size("height", 38 );
-            position: absolute;
-            top: 0;
-            left: 50%;
             transform: translate(-50%, -60%);
-            background-color: $body-bg;
 
             @include media-breakpoint-down(md) {
                 width: 24px;
                 height: 24px;
             }
 
+        }
+
+        icon {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            background-color: $body-bg;
+            z-index: 2;
         }
     }
 
