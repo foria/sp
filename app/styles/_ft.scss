@@ -10,25 +10,9 @@
     @include responsive-size("margin-bottom", $margin-double );
 }
 
-.video-levissima {
-    @include responsive-size("margin-bottom", $margin-double );
-}
-
-.levissima--btn {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-    @include responsive-size("max-width", 607 );
-
-    li {
-        @include responsive-size("line-height", 47 );
-        @include responsive-size("font-size", 20 );
-        color: $fonti-secondary;
-        border: 2px dotted $fonti;
-        border-radius: 80px;
-        margin-bottom: 3px;
-    }
-}
+// .video-levissima {
+//     @include responsive-size("margin-bottom", $margin-double );
+// }
 
 .trattore {
     @include responsive-size("width", 511 );

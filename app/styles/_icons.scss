@@ -36,6 +36,11 @@ icon {
     @include responsive-size("width", 176 );
     @include responsive-size("height", 72 );
     transform: translate(-50%, -70%);
+
+    @include media-breakpoint-down(sm){
+        width: 116px;
+        height: 52px;
+    }
 }
 
 .icon-sanpellegrino {
@@ -43,6 +48,12 @@ icon {
     @include responsive-size("width", 170 );
     @include responsive-size("height", 113 );
     transform: translate(-50%, -74%);
+
+    @include media-breakpoint-down(sm){
+        width: 120px;
+        height: 83px;
+        transform: translate(-50%, -84%);
+    }
 }
 
 .icon-spellegrino {
@@ -59,6 +70,12 @@ icon {
     @include responsive-size("height", 63 );
     transform: translate(-50%, -72%);
     background-size: 90% auto;
+
+    @include media-breakpoint-down(sm){
+        width: 162px;
+        height: 53px;
+        transform: translate(-50%, -82%);
+    }
 }
 
 .icon-vera {
@@ -66,6 +83,11 @@ icon {
     @include responsive-size("width", 92 );
     @include responsive-size("height", 94 );
     transform: translate(-50%, -72%);
+
+    @include media-breakpoint-down(sm){
+        height: 64px;
+        width: 62px;
+    }
 }
 
 .icon-social {

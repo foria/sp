@@ -3,13 +3,24 @@
     #page-title {
         background-image: url(../images/cc/titolo.svg);
     }
+
+    .fw-img {
+        width: 100%;
+    }
 }
 
-.ovali-img {
-    position: absolute;
-    bottom: 20px;
-    @include center(x);
+.sostegno-img {
+    background: url(../images/cc/sostegno.jpg) top center no-repeat;
+    background-size: cover;
+    @include responsive-size('padding-top', 35);
+    @include responsive-size('padding-bottom', 35);
 }
+
+// .ovali-img {
+//     position: absolute;
+//     bottom: 20px;
+//     @include center(x);
+// }
 
 .muba-img {
     @include responsive-size('width', 916);

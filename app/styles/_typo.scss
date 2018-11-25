@@ -7,11 +7,15 @@
 body {
     font-family: $font;
     font-weight: $font-normal;
-    @include responsive-size("font-size", $font-size-lg );
+    @include responsive-size("font-size", $font-size-md );
     letter-spacing: 2px;
     line-height: 1.4;
     text-align: center;
     color: map-get($theme-colors, secondary);
+
+    @include media-breakpoint-down(sm){
+        font-size: $font-size-sm;
+    }
 }
 
 strong {
@@ -274,6 +278,10 @@ h5 {
         &.bigger {
             @include responsive-size("font-size", 23 );
             color: map-get($theme-colors, secondary);
+
+            @include media-breakpoint-down(sm){
+                font-size: 18px;
+            }
         }
 
         .ft-page & {

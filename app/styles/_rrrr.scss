@@ -15,6 +15,14 @@
     bottom: 0;
     @include center(x);
     @include responsive-size('margin-left', 30);
+
+    @include media-breakpoint-down(md){
+        margin-left: -30px;
+    }
+    @include media-breakpoint-down(sm){
+        width: 42px;
+        margin-left: -10px;
+    }
 }
 
 .bottiglia-lev {
@@ -23,4 +31,12 @@
     bottom: 0;
     @include center(x);
     @include responsive-size('margin-left', 30);
+
+    @include media-breakpoint-down(md){
+        margin-left: -30px;
+    }
+    @include media-breakpoint-down(sm){
+        width: 42px;
+        margin-left: -10px;
+    }
 }

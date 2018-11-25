@@ -42,11 +42,12 @@ $font: Museo;
 $font-normal: 500;
 $font-light: 300;
 $font-bold: 700;
-$font-size-lg: 18;
+$font-size-md: 18;
+$font-size-sm: 15;
 $line-height: 1.4;
 
 // margins
-$margin-normal: $font-size-lg * $line-height;
+$margin-normal: $font-size-md * $line-height;
 $margin-double: $margin-normal * 2;
 $margin-section: $margin-normal * 6;
 

@@ -1,0 +1,53 @@
+
+.accordion {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    @include responsive-size("max-width", 607 );
+    margin: 0 auto;
+
+    .card {
+        margin-bottom: 3px;
+
+        p {
+            @include responsive-size("font-size", 15 );
+            padding: 2%;
+            margin: 0;
+
+            &:not(:last-child) {
+                border-bottom: 2px dotted $fonti;
+            }
+        }
+    }
+
+    .btn-link {
+        display: block;
+        width: 100%;
+        @include responsive-size("line-height", 47 );
+        @include responsive-size("font-size", 20 );
+        background-color: #f6f3e8;
+        color: $fonti-secondary;
+        border: 2px dotted $fonti;
+        border-radius: 80px;
+        position: relative;
+
+        @include media-breakpoint-down(sm){
+            font-size: 18px;
+        }
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            background-color: $fonti-secondary;
+            color: white;
+        }
+    }
+
+    .collapse {
+        @include responsive-size("padding-top", 47 );
+        @include responsive-size("margin-top", -47 );
+        border: 2px dotted $fonti;
+        border-radius: 30px;
+    }
+}
+

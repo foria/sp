@@ -28,7 +28,13 @@ jQuery(function($){
             $('.nav-menu').fadeToggle(200);
         });
 
-        var menuBG;
+        $('.div-toggler').on('click', function() {
+            $(this).prev('.p-fold').toggleClass('opened');
+        });
+
+        var menuBG = $('.nav-menu li.active').find('a').data('bg');
+        $('.nav-menu').css('backgroundColor', menuBG);
+
         $('.nav-menu li a').hover(function(){
             menuBG = $(this).data('bg');
 
@@ -51,7 +57,7 @@ jQuery(function($){
             }
         });
 
-        //if(window.innerWidth > 1024) {
+        if($('body').hasClass('home-page')) {
             window.addEventListener('scroll', function(e) {
                 if ($(document).scrollTop() > 300) {
                     $('body').addClass('sticky-header');
@@ -63,7 +69,9 @@ jQuery(function($){
                     $('#cd-vertical-nav').removeClass('show-nav');
                 }
             });
-        //}
+        } else {
+            $('#cd-vertical-nav').addClass('show-nav');
+        }
 
         $('.wheel--slicies svg > a').hover(function(){
             console.log('yo');
@@ -95,16 +103,6 @@ jQuery(function($){
         $('.cd-scroll-down').on('click', function(event){
             event.preventDefault();
             smoothScroll($(this.hash));
-        });
-
-        //open-close navigation on touch devices
-        $('.touch .cd-nav-trigger').on('click', function(){
-            $('.touch #cd-vertical-nav').toggleClass('open');
-
-        });
-        //close navigation on touch devices when selectin an elemnt from the list
-        $('.touch #cd-vertical-nav a').on('click', function(){
-            $('.touch #cd-vertical-nav').removeClass('open');
         });
 
         function updateNavigation() {

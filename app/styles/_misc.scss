@@ -13,6 +13,13 @@ body {
         margin: 100px auto;
     }
 
+    @include media-breakpoint-down(sm) {
+        &:not(.container){
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
     h5,
     p {
         @include responsive-size("max-width", $section-title-border-width );
@@ -26,6 +33,10 @@ body {
     border-radius: 40px;
     padding: 2em 7em;
     @include responsive-size("margin-bottom", $margin-normal );
+
+    @include media-breakpoint-down(sm){
+        padding: 1em 1em;
+    }
 
     p {
         margin-bottom: 0;
@@ -44,12 +55,16 @@ body {
 #wheel-model {
     background: url(../images/bg_model.jpg) top center no-repeat;
     background-size: contain;
-    @include responsive-size("height", 586 );
+    @include responsive-size("height", 643 );
+    @include responsive-size("margin-bottom", -60 );
+    position: relative;
+    z-index: 2;
 
     .p-fold {
         @include responsive-size("height", 53 );
         position: relative;
         overflow: hidden;
+        transition: height 0.5s ease;
 
         &:after {
             content: "";
@@ -63,6 +78,18 @@ body {
             background: linear-gradient(180deg, rgba(246,243,232,0.4) 0%, rgba(246,243,232,0.5) 100%);
             z-index: 1;
         }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        &.opened {
+            @include responsive-size("height", 511 );
+
+            + .div-toggler {
+                transform: rotate(-135deg);
+            }
+        }
     }
 
     .div-toggler {
@@ -71,6 +98,11 @@ body {
         display: inline-block;
         padding: 3px;
         transform: rotate(45deg);
+        cursor: pointer;
+    }
+
+    @include media-breakpoint-down(sm){
+        display: none;
     }
 }
 
@@ -80,4 +112,44 @@ body {
     background-repeat: no-repeat;
     background-size: 1100px auto;
     background-position: -20% 0;
+
+    @include media-breakpoint-down(md){
+        background-position: 100% 0;
+    }
+
+    @include media-breakpoint-down(sm){
+        background-size: 140% auto;
+        padding-top: 142px;
+        margin-top: 100px;
+    }
+}
+
+.container-w-fw-image {
+    position: relative;
+
+    .section {
+        position: absolute;
+        top: 0;
+        @include center(x);
+        margin-top: 0;
+
+        @include media-breakpoint-down(md){
+            position: static;
+            transform: none;
+        }
+    }
+
+    @include media-breakpoint-down(md){
+        > img {
+            display: none;
+        }
+    }
+}
+
+
+@include media-breakpoint-down(sm){
+    .fw-on-mobile {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
 }
