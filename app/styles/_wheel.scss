@@ -249,7 +249,7 @@
 
 .wheel--text {
     position: absolute;
-    left: 80%;
+    left: 82%;
     top: 50%;
     transform: translate(-50%, -50%);
     @include responsive-size("font-size", 25 );
@@ -283,7 +283,7 @@
 
 .wheel--help {
     position: absolute;
-    left: 80%;
+    left: 82%;
     top: 70%;
     transform: translate(-50%, -50%);
     @include responsive-size("font-size", 13 );

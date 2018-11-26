@@ -59,9 +59,9 @@
     .cd-dot {
         position: relative;
         /* we set a top value in order to align the dot with the label. If you change label's font, you may need to change this top value*/
-        top: 8px;
-        height: 12px;
-        width: 12px;
+        @include responsive-size("top", 8 );
+        @include responsive-size("height", 12 );
+        @include responsive-size("width", 12 );
         border-radius: 50%;
         background-color: transparent;
         border: 1px solid map-get($theme-colors, primary);

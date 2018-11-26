@@ -23,6 +23,9 @@
         width: 42px;
         margin-left: -10px;
     }
+    @include media-breakpoint-up(xl){
+        margin-left: 0;
+    }
 }
 
 .bottiglia-lev {
@@ -38,5 +41,8 @@
     @include media-breakpoint-down(sm){
         width: 42px;
         margin-left: -10px;
+    }
+    @include media-breakpoint-up(xl){
+        margin-left: 0;
     }
 }

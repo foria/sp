@@ -34,7 +34,7 @@
         height: 70vw;
         max-width: 470px;
         max-height: 470px;
-        font-size: 15px;
+        font-size: 12px;
     }
 
     p:before,
@@ -77,13 +77,17 @@
         height: 35vw;
         left: -3%;
         bottom: -10%;
-        font-size: 14px;
+        font-size: 10px;
     }
 
     small {
         display: block;
         @include responsive-size("font-size", 14 );
         font-weight: $font-light;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 10px;
+        }
     }
 }
 
@@ -150,7 +154,7 @@
     @include responsive-size("margin-top", -132 );
 
     @include media-breakpoint-down(sm) {
-        margin-top: -254px;
+        margin-top: -314px;
     }
 
     figure, p {
@@ -164,7 +168,7 @@
         @include responsive-size("margin-top", -34 );
 
         @include media-breakpoint-down(sm) {
-            margin-bottom: 5.2px;
+            margin-bottom: 25.2px;
             margin-top: -54px;
         }
     }

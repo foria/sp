@@ -78,19 +78,20 @@ body.menu-opened {
 
 .nav-trigger {
     @include responsive-size("width", 21 );
-    @include responsive-size("height", 15 );
+    @include responsive-size("height", 22 );
     cursor: pointer;
     transition: top .1s ease-in-out;
-    @include responsive-size("margin-top", -8 );
+    //@include responsive-size("margin-top", -8 );
     @include responsive-size("margin-left", 20 );
     z-index: ($zindex-modal+1);
 
     span {
         display: block;
         width: 100%;
-        height: 2px;
+        @include responsive-size("height", 2 );
         background: map-deep-get($theme-colors, primary);
-        margin: 4px auto;
+        @include responsive-size("margin-top", 4 );
+        @include responsive-size("margin-bottom", 4 );
         transition: all 0.3s ease-in-out;
     }
 
@@ -137,12 +138,16 @@ body.menu-opened {
     .nav-trigger {
         position: absolute;
         @include responsive-size("top", 25);
-        left: calc( 50% + #{map-get($container-max-widths, lg) / 2} - 26px );
+        left: calc( 50% + #{map-get($container-max-widths, lg) / 2} - 46px );
         transform: translateX(-100%);
 
         @include media-breakpoint-down(md) {
             left: auto;
             right: 16px;
+        }
+
+        @include media-breakpoint-up(xl) {
+            left: calc( 50% + #{map-get($container-max-widths, xl) / 2} - 67px );
         }
     }
 

@@ -5,6 +5,15 @@
     }
 }
 
+#levissima {
+    background: url(../images/ft/montagne.jpg) top center no-repeat;
+    background-size: contain;
+
+    @include media-breakpoint-down(sm){
+        background: none;
+    }
+}
+
 .partnership-img {
     @include responsive-size("width", 430 );
     @include responsive-size("margin-bottom", $margin-double );

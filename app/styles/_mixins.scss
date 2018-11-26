@@ -32,7 +32,7 @@
     #{$property}: #{$value}$unit;
 
     @include media-breakpoint-up(xl) {
-    	#{$property}: scale-size($value);
+    	#{$property}: #{scale-size($value)}$unit;
     }
 }
 
