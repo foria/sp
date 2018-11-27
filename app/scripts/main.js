@@ -111,19 +111,21 @@ jQuery(function($){
 
     });
 
-    var elementTop, elementBottom, viewportTop, viewportBottom, diffTop, proportion;
+    if($('.trattore').length > 0){
+        var elementTop, elementBottom, viewportTop, viewportBottom, diffTop, proportion;
 
-    $(window).on('resize scroll', function() {
-        elementTop = $('.trattore').offset().top;
-        elementBottom = elementTop + $('.trattore').outerHeight();
-        viewportTop = $(window).scrollTop();
-        viewportBottom = viewportTop + $(window).height();
-        diffTop = elementTop - viewportTop;
-        proportion = (diffTop / $(window).height())*100;
+        $(window).on('resize scroll', function() {
+            elementTop = $('.trattore').offset().top;
+            elementBottom = elementTop + $('.trattore').outerHeight();
+            viewportTop = $(window).scrollTop();
+            viewportBottom = viewportTop + $(window).height();
+            diffTop = elementTop - viewportTop;
+            proportion = (diffTop / $(window).height())*100;
 
-        if( proportion > 0 && proportion < 40 ){
-            $('.trattore').css('left', proportion+'%' );
-        }
-    });
+            if( proportion > 0 && proportion < 40 ){
+                $('.trattore').css('left', proportion+'%' );
+            }
+        });
+    }
 
 })

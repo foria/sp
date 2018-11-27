@@ -253,6 +253,32 @@
     }
 }
 
+.leadership {
+    position: relative;
+
+    figcaption > div {
+        position: absolute;
+        @include responsive-size("width", 300 );
+        @include responsive-size("height", 450 );
+        background-size: contain;
+        //transition: transform
+    }
+
+    .leadership-donna {
+        background: url(../images/home/leadership-donna.svg) center no-repeat;
+        @include responsive-size("right", 172 );
+        bottom: 10%;
+        transform: rotate(-15deg);
+    }
+
+    .leadership-uomo {
+        background: url(../images/home/leadership-uomo.svg) center no-repeat;
+        @include responsive-size("right", -20 );
+        bottom: 9%;
+        transform: rotate(15deg);
+    }
+}
+
 .safetyy--chart {
     position: relative;
 
