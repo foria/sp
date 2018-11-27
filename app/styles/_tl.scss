@@ -1,10 +1,4 @@
 
-.tl-page {
-    #page-title {
-        background-image: url(../images/tl/titolo.svg);
-    }
-}
-
 #bolliblu {
     position: relative;
 
@@ -19,8 +13,8 @@
         @include responsive-size("height", 48);
         background: url(../images/tl/rotaia.svg) center no-repeat;
         background-size: contain;
-        animation: engine1animation 6s linear;
-        animation-iteration-count: infinite;
+        // animation: engine1animation 6s linear;
+        // animation-iteration-count: infinite;
         //animation-delay: 1.5s;
 
         &:first-child {
@@ -33,20 +27,16 @@
             left: 70%;
         }
     }
-
-    #rotaia1 {
-
-    }
 }
 
-@keyframes engine1animation {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
+// @keyframes engine1animation {
+//     from {
+//         transform: rotate(0deg);
+//     }
+//     to {
+//         transform: rotate(360deg);
+//     }
+// }
 
 .truck-img {
     @include responsive-size('width', 510);

@@ -119,11 +119,48 @@ jQuery(function($){
             elementBottom = elementTop + $('.trattore').outerHeight();
             viewportTop = $(window).scrollTop();
             viewportBottom = viewportTop + $(window).height();
-            diffTop = elementTop - viewportTop;
-            proportion = (diffTop / $(window).height())*100;
+            diffTop = viewportBottom - elementTop;
+            proportion = ( (diffTop / $(window).height())*100 ) -20;
+            console.log(elementTop + ' ' + viewportBottom + ' ' + viewportTop + ' ' + diffTop);
 
             if( proportion > 0 && proportion < 40 ){
                 $('.trattore').css('left', proportion+'%' );
+            }
+        });
+    }
+
+    if($('.hfarm').length > 0){
+        var elementTop, elementBottom, viewportTop, viewportBottom, diffTop, proportion;
+
+        $(window).on('resize scroll', function() {
+            elementTop = $('.hfarm-trattore').offset().top;
+            elementBottom = elementTop + $('.hfarm-trattore').outerHeight();
+            viewportTop = $(window).scrollTop();
+            viewportBottom = viewportTop + $(window).height();
+            diffTop = viewportBottom - elementTop;
+            proportion = ( (diffTop / $(window).height())*100 ) -20;
+            console.log(elementTop + ' ' + viewportBottom + ' ' + viewportTop + ' ' + diffTop);
+
+            if( proportion > 0 && proportion < 75 ){
+                $('.hfarm-trattore').css('left', proportion+'%' );
+            }
+        });
+    }
+
+    if($('#bolliblu').length > 0){
+        var elementTop, elementBottom, viewportTop, viewportBottom, diffTop, proportion;
+
+        $(window).on('resize scroll', function() {
+            elementTop = $('#bolliblu').offset().top;
+            elementBottom = elementTop + $('.hfarm-trattore').outerHeight();
+            viewportTop = $(window).scrollTop();
+            viewportBottom = viewportTop + $(window).height();
+            diffTop = viewportBottom - elementTop;
+            proportion = (diffTop / $(window).height())*300 ;
+            console.log(elementTop + ' ' + viewportBottom + ' ' + viewportTop + ' ' + diffTop);
+
+            if( proportion > 0 && proportion < 400 ){
+                $('.rotaia').css('transform', 'rotate('+ proportion +'deg)' );
             }
         });
     }

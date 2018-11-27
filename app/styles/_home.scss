@@ -261,13 +261,13 @@
         @include responsive-size("width", 300 );
         @include responsive-size("height", 450 );
         background-size: contain;
-        //transition: transform
+        transition: transform .5s ease-in-out;
     }
 
     .leadership-donna {
         background: url(../images/home/leadership-donna.svg) center no-repeat;
         @include responsive-size("right", 172 );
-        bottom: 10%;
+        bottom: 11%;
         transform: rotate(-15deg);
     }
 
@@ -276,6 +276,13 @@
         @include responsive-size("right", -20 );
         bottom: 9%;
         transform: rotate(15deg);
+    }
+
+    &.aos-animate {
+        .leadership-donna,
+        .leadership-uomo {
+            transform: rotate(0);
+        }
     }
 }
 
@@ -324,6 +331,20 @@
     }
 }
 
+.hfarm {
+    position: relative;
+    transform: rotate(7deg);
+}
+
+.hfarm-trattore {
+    @include responsive-size("width", 180 );
+    @include responsive-size("height", 100 );
+    background: url(../images/home/hfarm-trattore.svg);
+    position: absolute;
+    top: 21%;
+    left: 0;
+}
+
 .un-tasks {
 
     display: flex;
@@ -353,6 +374,7 @@
     }
 
     &--box {
+        width: 24%;
         flex-basis: 24%;
         @include responsive-size("height", 56 );
         background-color: map-get($theme-colors, secondary);
@@ -379,6 +401,7 @@
             @include responsive-size("font-size", 12.5 );
             color: white;
             text-transform: uppercase;
+            letter-spacing: 0;
         }
     }
 }
