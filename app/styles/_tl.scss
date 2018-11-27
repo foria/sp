@@ -5,6 +5,49 @@
     }
 }
 
+#bolliblu {
+    position: relative;
+
+    .st0{fill:#72C2E1;}
+    //.st1{display:none;}
+    .st2{display:inline;fill:#FFFFFF;}
+
+    .rotaia {
+        position: absolute;
+        bottom: 15px;
+        @include responsive-size("width", 48);
+        @include responsive-size("height", 48);
+        background: url(../images/tl/rotaia.svg) center no-repeat;
+        background-size: contain;
+        animation: engine1animation 6s linear;
+        animation-iteration-count: infinite;
+        //animation-delay: 1.5s;
+
+        &:first-child {
+            left: 24%;
+        }
+        &:nth-child(2) {
+            left: 47%;
+        }
+        &:last-child {
+            left: 70%;
+        }
+    }
+
+    #rotaia1 {
+
+    }
+}
+
+@keyframes engine1animation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .truck-img {
     @include responsive-size('width', 510);
     @include responsive-size('margin-bottom', $margin-normal);

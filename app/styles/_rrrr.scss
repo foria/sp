@@ -14,18 +14,19 @@
     position: absolute;
     bottom: 0;
     @include center(x);
-    @include responsive-size('margin-left', 30);
+    //@include responsive-size('margin-left', 30);
+        margin-left: -20px;
 
-    @include media-breakpoint-down(md){
-        margin-left: -30px;
-    }
+    // @include media-breakpoint-down(md){
+    //     margin-left: -30px;
+    // }
     @include media-breakpoint-down(sm){
         width: 42px;
         margin-left: -10px;
     }
-    @include media-breakpoint-up(xl){
-        margin-left: 0;
-    }
+    // @include media-breakpoint-up(xl){
+    //     margin-left: 0;
+    // }
 }
 
 .bottiglia-lev {
@@ -33,16 +34,17 @@
     position: absolute;
     bottom: 0;
     @include center(x);
-    @include responsive-size('margin-left', 30);
+    //@include responsive-size('margin-left', 30);
+    margin-left: -30px;
 
-    @include media-breakpoint-down(md){
-        margin-left: -30px;
-    }
+    // @include media-breakpoint-down(md){
+    //     margin-left: -30px;
+    // }
     @include media-breakpoint-down(sm){
         width: 42px;
         margin-left: -10px;
     }
-    @include media-breakpoint-up(xl){
-        margin-left: 0;
-    }
+    // @include media-breakpoint-up(xl){
+    //     margin-left: 0;
+    // }
 }

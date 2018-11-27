@@ -83,63 +83,24 @@
     // }
 }
 
-.chart-brands {
+.chart-brands:after {
+    content: "";
     position: absolute;
     @include responsive-size("bottom", 50 );
-    width: 83%;
     @include center(x);
-    margin-left: 1%;
-    text-align: left;
+    @include responsive-size("height", 43 );
+    width: 80%;
+    margin-left: 2%;
+    background: url(../images/ft/chart-loghi.jpg) center no-repeat;
+    background-size: contain;
 
-    @include media-breakpoint-down(sm) {
-        bottom: 23px;
+    @include media-breakpoint-down(md){
+        height: 36px;
+        bottom: 40px;
     }
 
-    icon {
-        display: inline-block;
-        width: 13%;
-        @include responsive-size("height", 50 );
-        margin: 0 2%;
-        vertical-align: bottom;
-        transform: none;
-        background-position: bottom center;
-
-        @include media-breakpoint-down(md) {
-            height: 30px;
-        }
-
-        @include media-breakpoint-down(sm) {
-            height: 15px;
-        }
-
-        &:last-child {
-            margin: 0;
-        }
-    }
-
-    .icon-panna {
-        margin: 0 0 0 2%;
-    }
-
-    .icon-levissima {
-        margin: 0 0 0 1%;
-    }
-
-    // .icon-spellegrino {
-    //     margin-left: 2%;
-    //     margin-right: 4%;
-    // }
-
-    .icon-vera {
-        //width: 8%;
-        margin: 0 2.3%;
-
-        @include media-breakpoint-down(md) {
-            margin: 0 2%;
-        }
-
-        @include media-breakpoint-down(sm) {
-            margin: 0;
-        }
+    @include media-breakpoint-down(sm){
+        height: 18px;
+        bottom: 20px;
     }
 }

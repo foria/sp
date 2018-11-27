@@ -55,7 +55,8 @@
     [class*="wheel--"] {
         position: absolute;
         left: 0;
-        @include center(y);
+        top: 50%;
+        transform: translatey(-50%);
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;

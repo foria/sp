@@ -8,7 +8,6 @@ AOS.init({
   disableMutationObserver: false, // disables automatic mutations' detections (advanced)
   debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
   throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-
   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
   offset: 120, // offset (in px) from the original trigger point
   delay: 300, // values from 0 to 3000, with step 50ms
@@ -17,8 +16,44 @@ AOS.init({
   once: false, // whether animation should happen only once - while scrolling down
   mirror: false, // whether elements should animate out while scrolling past them
   anchorPlacement: 'top-top', // defines which position of the element regarding to window should trigger the animation
-
 });
+
+// check if element is in the viewport
+$.fn.isInViewport = function() {
+  var elementTop = $(this).offset().top;
+
+  var elementBottom = elementTop + $(this).outerHeight();
+
+  var viewportTop = $(window).scrollTop();
+  var viewportBottom = viewportTop + $(window).height();
+
+  var diffTop = elementTop - viewportTop;
+  var diffBottom = elementTop - viewportBottom;
+  var diffs = diffTop / $(window).height();
+console.log(viewportTop + " " + viewportBottom + " " + elementTop + " " + diffTop + " " + diffBottom + " " + diffs);
+
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+function animationOnScroll($el) {
+    var scrollYbase = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
+    var scrollY, scrollDiff, newBrushesHeight, newCupsHeight;
+    //var elPos = $j($el).offset().top;
+
+    $j(window).on('scroll', function() {
+        scrollY = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
+        scrollDiff = scrollY - scrollYbase;
+        newBrushesHeight = brushes - scrollDiff;
+        newCupsHeight = cups - newBrushesHeight;
+
+        if(scrollY > scrollYbase && newBrushesHeight > -5) {
+            $j($el).find('div:first-child').css('height', newBrushesHeight);
+            if( newCupsHeight <= (cups+5) ){
+                $j($el).find('div:last-child').css('height', newCupsHeight);
+            }
+        }
+    })
+}
 
 jQuery(function($){
 
@@ -124,6 +159,21 @@ jQuery(function($){
             );
         }
 
-    })
+    });
+
+    var elementTop, elementBottom, viewportTop, viewportBottom, diffTop, proportion;
+
+    $(window).on('resize scroll', function() {
+        elementTop = $('.trattore').offset().top;
+        elementBottom = elementTop + $('.trattore').outerHeight();
+        viewportTop = $(window).scrollTop();
+        viewportBottom = viewportTop + $(window).height();
+        diffTop = elementTop - viewportTop;
+        proportion = (diffTop / $(window).height())*100;
+
+        if( proportion > 0 && proportion < 40 ){
+            $('.trattore').css('left', proportion+"%" );
+        }
+    });
 
 })
