@@ -16,8 +16,9 @@
         display: block;
         position: absolute;
         bottom: -10%;
-        background: url(../images/home/scroll_down.svg) center no-repeat;
+        background: url(../images/home/scroll_down.svg) no-repeat;
         background-size: contain;
+        background-position: 48% center;
         @include responsive-size("height", 26 );
 
         @include media-breakpoint-down(sm) {
@@ -25,7 +26,7 @@
         }
 
         .sticky-header & {
-            display: none;
+            //display: none;
         }
 
     }
