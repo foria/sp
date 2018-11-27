@@ -30,7 +30,7 @@ $.fn.isInViewport = function() {
   var diffTop = elementTop - viewportTop;
   var diffBottom = elementTop - viewportBottom;
   var diffs = diffTop / $(window).height();
-console.log(viewportTop + " " + viewportBottom + " " + elementTop + " " + diffTop + " " + diffBottom + " " + diffs);
+console.log(viewportTop + ' ' + viewportBottom + ' ' + elementTop + ' ' + diffTop + ' ' + diffBottom + ' ' + diffs);
 
   return elementBottom > viewportTop && elementTop < viewportBottom;
 };
@@ -172,7 +172,7 @@ jQuery(function($){
         proportion = (diffTop / $(window).height())*100;
 
         if( proportion > 0 && proportion < 40 ){
-            $('.trattore').css('left', proportion+"%" );
+            $('.trattore').css('left', proportion+'%' );
         }
     });
 
