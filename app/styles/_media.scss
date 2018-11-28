@@ -10,19 +10,6 @@ img {
     @include responsive-size("margin-bottom", $margin-double );
 }
 
-.video-on-scroll {
-    @include responsive-size("width", 410 );
-    @include responsive-size("height", 410 );
-    border-radius: 50%;
-    margin: 0 auto;
-    overflow: hidden;
-
-    video {
-        object-fit: cover;
-        width: 180%;
-    }
-}
-
 .fw-img {
     width: 100%;
 }

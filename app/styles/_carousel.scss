@@ -82,6 +82,10 @@
     display: inline-block;
     @include responsive-size("padding", 25 );
     background: none;
+
+    #community-carousel & {
+        border-color: $fonti;
+    }
 }
 
 .carousel-control-next {

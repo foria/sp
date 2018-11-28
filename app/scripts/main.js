@@ -5,18 +5,44 @@ AOS.init({
   anchorPlacement: 'top-top', // defines which position of the element regarding to window should trigger the animation
 });
 
+$(function() {
+  var timer;
+  $(window).scroll(function() {
+    clearTimeout(timer);
+    timer = setTimeout(function() {
+      $(window).trigger("scrollStop");
+    }, 100);
+  });
+});
+
+// HTMLVideoElement.prototype.playBackwards = function() {
+//     this.pause();
+
+//     var video = this;
+
+//     var fps = 50;
+//     var intervalRewind = setInterval(function() {
+//         if(video.currentTime == 0){
+//            clearInterval(intervalRewind);
+//            video.pause();
+//         }
+//         else {
+//             video.currentTime += -(1/fps);
+//         }
+//     }, 1000 / fps);
+// };
+
 jQuery(function($){
 
     $(document).ready(function(){
+
+        // menu trigger
         $('.nav-trigger').on('click', function() {
             $('body').toggleClass('menu-opened');
             $('.nav-menu').fadeToggle(200);
         });
 
-        $('.div-toggler').on('click', function() {
-            $(this).prev('.p-fold').toggleClass('opened');
-        });
-
+        // offcanvas menu change color
         var menuBG = $('.nav-menu li.active').find('a').data('bg');
         $('.nav-menu').css('backgroundColor', menuBG);
 
@@ -28,6 +54,12 @@ jQuery(function($){
             }
         });
 
+        // mwheel-model trigger
+        $('.div-toggler').on('click', function() {
+            $(this).prev('.p-fold').toggleClass('opened');
+        });
+
+        // UN boxes
         var boxes, data;
         $('.un-tasks--icons li').hover(function(){
             $('.un-tasks--icons').find('.hover').removeClass('hover');
@@ -42,6 +74,7 @@ jQuery(function($){
             }
         });
 
+        // toggle sticky header on HP
         if($('body').hasClass('home-page')) {
             window.addEventListener('scroll', function(e) {
                 if ($(document).scrollTop() > 300) {
@@ -58,6 +91,7 @@ jQuery(function($){
             $('#cd-vertical-nav').addClass('show-nav');
         }
 
+        // hover effect on wheel
         $('.wheel--slicies svg > a').hover(function(){
             console.log('yo');
             $('.wheel--slicies svg').find('.hover').removeClass('hover');
@@ -71,30 +105,14 @@ jQuery(function($){
         })
 
         // Scroll Navigation
-        var contentSections = $('.cd-section'),
+
+        var $contentSections = $('.section'),
         navigationItems = $('#cd-vertical-nav a');
 
-        updateNavigation();
-        $(window).on('scroll', function(){
-            updateNavigation();
-        });
-
-        //smooth scroll to the section
-        navigationItems.on('click', function(event){
-            event.preventDefault();
-            smoothScroll($(this.hash));
-        });
-        //smooth scroll to second section
-        $('.cd-scroll-down').on('click', function(event){
-            event.preventDefault();
-            smoothScroll($(this.hash));
-        });
-
         function updateNavigation() {
-            contentSections.each(function(){
-                $this = $(this);
-                var activeSection = $('#cd-vertical-nav a[href="#'+$this.attr('id')+'"]').data('number') - 1;
-                if ( ( $this.offset().top - $(window).height()/2 < $(window).scrollTop() ) && ( $this.offset().top + $this.height() - $(window).height()/2 > $(window).scrollTop() ) ) {
+            $contentSections.each(function(){
+                var activeSection = $('#cd-vertical-nav a[href="#'+$(this).attr('id')+'"]').data('number') - 1;
+                if ( ( $(this).offset().top - $(window).height()/2 < $(window).scrollTop() ) && ( $(this).offset().top + $(this).height() - $(window).height()/2 > $(window).scrollTop() ) ) {
                     navigationItems.eq(activeSection).addClass('is-selected');
                 }else {
                     navigationItems.eq(activeSection).removeClass('is-selected');
@@ -108,6 +126,17 @@ jQuery(function($){
                 600
             );
         }
+
+        updateNavigation();
+        $(window).on('scroll', function(){
+            updateNavigation();
+        });
+
+        //smooth scroll to the section
+        navigationItems.on('click', function(event){
+            event.preventDefault();
+            smoothScroll($(this.hash));
+        });
 
     });
 
@@ -166,7 +195,7 @@ jQuery(function($){
     }
 
     if($('#video-train').length > 0){
-        var elementTop, elementBottom, viewportTop, viewportBottom, diffTop, proportion, totalFrames;
+        var elementTop, elementBottom, viewportTop, viewportBottom, diffTop, proportion, proportionIndex, totalFrames;
 
         // video play on scroll
         var frameNumber = 0, // start video at frame 0
@@ -182,7 +211,6 @@ jQuery(function($){
           //setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
         });
 
-        //Use requestAnimationFrame for smooth playback
 
         // function scrollPlay(){
         //     elementTop = $('#video-train').offset().top;
@@ -198,21 +226,31 @@ jQuery(function($){
         // }
 
         //window.requestAnimationFrame(scrollPlay);
-
+        //proportionIndex = 0;
         $(window).on('resize scroll', function() {
-            elementTop = $('#video-train').offset().top;
-            elementBottom = elementTop + $('#video-train').outerHeight();
+            elementTop = $('#trainonscroll').offset().top;
+            elementBottom = elementTop + $('#trainonscroll').outerHeight();
             viewportTop = $(window).scrollTop();
             viewportBottom = viewportTop + $(window).height();
             diffTop = viewportBottom - elementTop;
             proportion = (diffTop / $(window).height())*100;
+            //console.log(proportion);
 
-            frameNumber  = (proportion * totalFrames)/100;
-            console.log(frameNumber);
+            //frameNumber  = (proportion * totalFrames)/100;
+            //console.log(frameNumber);
 
             if( proportion > 0 && proportion < 100 ){
-                vid.currentTime  = frameNumber;
+                //if(proportion > proportionIndex) {
+                    vid.play();
+                //} else {
+                //     vid.playBackwards();
+                // }
+                // proportionIndex = proportion;
             }
+        });
+
+        $(window).bind("scrollStop", function() {
+            vid.pause();
         });
     }
 

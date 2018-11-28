@@ -44,6 +44,39 @@
 //     }
 // }
 
+#trainonscroll {
+    position: relative;
+    @include responsive-size("margin-bottom", $margin-double );
+
+    > img {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.video-on-scroll {
+    @include responsive-size("width", 315 );
+    @include responsive-size("height", 315 );
+    border-radius: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+    top: 5%;
+    right: 6%;
+    z-index: 1;
+
+    @include media-breakpoint-down(sm) {
+        width: 155px;
+        height: 155px;
+        top: 0;
+    }
+
+    video {
+        margin-left: -40%;
+        width: 180%;
+    }
+}
+
 .truck-img {
     @include responsive-size('width', 510);
     @include responsive-size('margin-bottom', $margin-normal);
