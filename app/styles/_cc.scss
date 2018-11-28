@@ -11,6 +11,11 @@
     background-size: cover;
     @include responsive-size('padding-top', 35);
     @include responsive-size('padding-bottom', 35);
+    @include responsive-size('margin-top', -($margin-section));
+
+    @include media-breakpoint-down(md){
+        margin-top: -100px;
+    }
 }
 
 // .ovali-img {

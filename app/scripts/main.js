@@ -157,10 +157,61 @@ jQuery(function($){
             viewportBottom = viewportTop + $(window).height();
             diffTop = viewportBottom - elementTop;
             proportion = (diffTop / $(window).height())*300 ;
-            console.log(elementTop + ' ' + viewportBottom + ' ' + viewportTop + ' ' + diffTop);
+            //console.log(elementTop + ' ' + viewportBottom + ' ' + viewportTop + ' ' + diffTop);
 
             if( proportion > 0 && proportion < 400 ){
                 $('.rotaia').css('transform', 'rotate('+ proportion +'deg)' );
+            }
+        });
+    }
+
+    if($('#video-train').length > 0){
+        var elementTop, elementBottom, viewportTop, viewportBottom, diffTop, proportion, totalFrames;
+
+        // video play on scroll
+        var frameNumber = 0, // start video at frame 0
+        // lower numbers = faster playback
+        playbackConst = 500,
+        // select video element
+        vid = document.getElementById('video-train');
+        // var vid = $('#v0')[0]; // jquery option
+
+        // dynamically set the page height according to video length
+        vid.addEventListener('loadedmetadata', function() {
+            totalFrames = vid.duration;
+          //setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
+        });
+
+        //Use requestAnimationFrame for smooth playback
+
+        // function scrollPlay(){
+        //     elementTop = $('#video-train').offset().top;
+        //     elementBottom = elementTop + $('#video-train').outerHeight();
+        //     viewportTop = $(window).scrollTop();
+        //     viewportBottom = viewportTop + $(window).height();
+        //     diffTop = viewportBottom - elementTop;
+        //     proportion = (diffTop / $(window).height())*100;
+
+        //     frameNumber  = (proportion * totalFrames)/100;
+        //     vid.currentTime  = 15;
+        //     window.requestAnimationFrame(scrollPlay);
+        // }
+
+        //window.requestAnimationFrame(scrollPlay);
+
+        $(window).on('resize scroll', function() {
+            elementTop = $('#video-train').offset().top;
+            elementBottom = elementTop + $('#video-train').outerHeight();
+            viewportTop = $(window).scrollTop();
+            viewportBottom = viewportTop + $(window).height();
+            diffTop = viewportBottom - elementTop;
+            proportion = (diffTop / $(window).height())*100;
+
+            frameNumber  = (proportion * totalFrames)/100;
+            console.log(frameNumber);
+
+            if( proportion > 0 && proportion < 100 ){
+                vid.currentTime  = frameNumber;
             }
         });
     }

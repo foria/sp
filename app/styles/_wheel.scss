@@ -6,7 +6,7 @@
         height: 353px;
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(sm) {
         height: auto;
     }
 
@@ -21,8 +21,13 @@
         background-position: 48% center;
         @include responsive-size("height", 26 );
 
+        @include media-breakpoint-down(md) {
+            background-position: 47% center;
+        }
+
         @include media-breakpoint-down(sm) {
             width: 88%;
+            background-position: 50% center;
         }
 
         .sticky-header & {
@@ -42,9 +47,8 @@
     @include responsive-size("height", 543 );
     @include responsive-size("margin-left", -100 );
     transition: width .5s ease-in-out, height .5s ease-in-out, opacity .1s;
-    //transform: translate3d(0,0,0);
-    //will-change: width, height;
-    //animation: fadeWheel .1s;
+    transform: translate3d(0,0,0);
+    will-change: width, height;
     transition-delay: 0s, 0s, 0s;
 
     @include media-breakpoint-down(md) {
@@ -66,9 +70,13 @@
         height: 100%;
         z-index: 10;
         transition: margin .5s ease-in-out;
-        //will-change: opacity;
-        //-webkit-backface-visibility: hidden;
+        will-change: opacity, margin;
+        -webkit-backface-visibility: hidden;
         // backface-visibility: hidden;
+
+        @include media-breakpoint-down(md) {
+            @include responsive-size("margin-top", -(353/2) );
+        }
 
         .sticky-header & {
             @include responsive-size("margin-top", -(186/2) );

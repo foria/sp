@@ -10,6 +10,8 @@ body {
     position: relative;
 
     @include media-breakpoint-down(md) {
+        // z-index: 3;
+        // position: relative;
         margin: 100px auto;
     }
 
@@ -18,6 +20,11 @@ body {
             padding-left: 15px;
             padding-right: 15px;
         }
+    }
+
+    > figure:not(.fw-on-mobile) {
+        max-width: 100%;
+        overflow: hidden;
     }
 
     h5,
@@ -60,6 +67,10 @@ body {
     position: relative;
     z-index: 2;
 
+    @include media-breakpoint-down(md){
+        margin-bottom: -50px;
+    }
+
     .p-fold {
         @include responsive-size("height", 53 );
         position: relative;
@@ -85,6 +96,10 @@ body {
 
         &.opened {
             @include responsive-size("height", 511 );
+
+            @include media-breakpoint-down(md){
+                height: 540px;
+            }
 
             + .div-toggler {
                 transform: rotate(-135deg);

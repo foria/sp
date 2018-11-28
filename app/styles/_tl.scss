@@ -17,14 +17,20 @@
         // animation-iteration-count: infinite;
         //animation-delay: 1.5s;
 
+        @include media-breakpoint-down(sm){
+            bottom: 7px;
+            width: 5vw;
+            height: 5vw;
+        }
+
         &:first-child {
-            left: 24%;
+            left: 25%;
         }
         &:nth-child(2) {
             left: 47%;
         }
         &:last-child {
-            left: 70%;
+            left: 68%;
         }
     }
 }

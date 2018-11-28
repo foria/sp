@@ -216,6 +216,10 @@ h5 {
         span {
             color: $grey-text;
 
+            @include media-breakpoint-down(md) {
+                display: block;
+            }
+
             &.subtext {
                 color: map-get($theme-colors, primary);
                 position: absolute;

@@ -262,6 +262,16 @@
         @include responsive-size("height", 450 );
         background-size: contain;
         transition: transform .5s ease-in-out;
+
+        @include media-breakpoint-down(md) {
+            width: 230px;
+            height: 305px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            width: 120px;
+            height: 165px;
+        }
     }
 
     .leadership-donna {
@@ -269,6 +279,16 @@
         @include responsive-size("right", 172 );
         bottom: 11%;
         transform: rotate(-15deg);
+
+        @include media-breakpoint-down(md) {
+            right: 162px;
+            bottom: 22%;
+        }
+
+        @include media-breakpoint-down(sm) {
+            right: 82px;
+            bottom: 22%;
+        }
     }
 
     .leadership-uomo {
@@ -276,6 +296,16 @@
         @include responsive-size("right", -20 );
         bottom: 9%;
         transform: rotate(15deg);
+
+        @include media-breakpoint-down(md) {
+            right: 0px;
+            bottom: 21%;
+        }
+
+        @include media-breakpoint-down(sm) {
+            right: 0px;
+            bottom: 21%;
+        }
     }
 
     &.aos-animate {
@@ -343,6 +373,11 @@
     position: absolute;
     top: 21%;
     left: 0;
+
+    @include media-breakpoint-down(md) {
+        width: 32vw;
+        height: 17vw;
+    }
 }
 
 .un-tasks {
