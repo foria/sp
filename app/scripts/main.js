@@ -10,7 +10,7 @@ $(function() {
   $(window).scroll(function() {
     clearTimeout(timer);
     timer = setTimeout(function() {
-      $(window).trigger("scrollStop");
+      $(window).trigger('scrollStop');
     }, 100);
   });
 });
@@ -249,7 +249,7 @@ jQuery(function($){
             }
         });
 
-        $(window).bind("scrollStop", function() {
+        $(window).bind('scrollStop', function() {
             vid.pause();
         });
     }

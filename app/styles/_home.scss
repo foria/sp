@@ -2,6 +2,7 @@
 .ad-msg--img {
     position: relative;
     @include clearfix();
+    overflow: visible !important;
 
     img {
         @include responsive-size("width", 333 );
