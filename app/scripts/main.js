@@ -76,10 +76,11 @@ jQuery(function($){
 
         // toggle sticky header on HP
         if($('body').hasClass('home-page')) {
+            $('.wheel').addClass('animate');
             window.addEventListener('scroll', function(e) {
                 if ($(document).scrollTop() > 300) {
                     $('body').addClass('sticky-header');
-                    $('.wheel').removeClass('animate');
+                    $('.wheel').removeClass('post-animate');
                     $('#cd-vertical-nav').addClass('show-nav');
                 } else {
                     $('body').removeClass('sticky-header');
@@ -93,10 +94,11 @@ jQuery(function($){
 
         // hover effect on wheel
         $('.wheel--slicies svg > a').hover(function(){
-            console.log('yo');
             $('.wheel--slicies svg').find('.hover').removeClass('hover');
             $(this).addClass('hover');
             $('.wheel').addClass('hover');
+            $('.wheel').removeClass('animate');
+            $('.wheel').addClass('post-animate');
         })
 
         $('.wheel').mouseleave(function(){
