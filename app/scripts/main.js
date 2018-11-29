@@ -56,7 +56,7 @@ jQuery(function($){
 
         // mwheel-model trigger
         $('.div-toggler').on('click', function() {
-            $(this).prev('.p-fold').toggleClass('opened');
+            $('#wheel-model').toggleClass('opened');
         });
 
         // UN boxes

@@ -64,12 +64,17 @@ body {
     background: url(../images/bg_model.jpg) top center no-repeat;
     background-size: contain;
     @include responsive-size("height", 643 );
-    @include responsive-size("margin-bottom", -60 );
-    position: relative;
+    @include responsive-size("margin-bottom", -430 );
+    @include responsive-size("margin-top", 100 );
     z-index: 2;
+    transition: margin 0.5s ease;
 
     @include media-breakpoint-down(md){
-        margin-bottom: -50px;
+        margin-bottom: -400px;
+    }
+
+    @include media-breakpoint-down(sm){
+        display: none;
     }
 
     .p-fold {
@@ -94,18 +99,6 @@ body {
         p:last-child {
             margin-bottom: 0;
         }
-
-        &.opened {
-            @include responsive-size("height", 511 );
-
-            @include media-breakpoint-down(md){
-                height: 540px;
-            }
-
-            + .div-toggler {
-                transform: rotate(-135deg);
-            }
-        }
     }
 
     .div-toggler {
@@ -117,14 +110,32 @@ body {
         cursor: pointer;
     }
 
-    @include media-breakpoint-down(sm){
-        display: none;
+    &.opened {
+        @include responsive-size("margin-bottom", -60 );
+        z-index: 4;
+
+        @include media-breakpoint-down(md){
+            margin-bottom: -40px;
+        }
+
+        .p-fold {
+            @include responsive-size("height", 511 );
+
+            @include media-breakpoint-down(md){
+                height: 540px;
+            }
+        }
+
+        .div-toggler {
+            transform: rotate(-135deg);
+        }
     }
 }
 
 #page-title {
     @extend .container;
     margin-top: 0;
+    z-index: 3;
     //@include responsive-size("padding-top", 272 );
 
     .title-img {

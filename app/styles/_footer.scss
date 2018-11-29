@@ -2,16 +2,12 @@
 .footer-menu {
     max-width: 92%;
     margin: 150px auto;
+    position: relative;
+    z-index: 3;
 
     li {
         text-align: center;
         padding: 0 1%;
-
-        @include media-breakpoint-down(md) {
-            flex-basis: 50% !important;
-            width: 50%;
-            margin-bottom: 30px;
-        }
 
         &:nth-child(2),
         &:nth-child(3),
@@ -22,8 +18,16 @@
             flex: 1 1;
         }
 
+        &:nth-child(4) {
+            flex-basis: 4%;
+        }
+
         &:nth-child(6) {
-            flex-basis: 8%;
+            flex-basis: 3%;
+        }
+
+        &:nth-child(6) {
+            flex-basis: 10%;
         }
 
         &:nth-child(2) a:after {
@@ -45,6 +49,12 @@
         &:nth-child(7) a:after,
         &:nth-child(8) a:after {
             border-color: map-get($theme-colors, secondary);
+        }
+
+        @include media-breakpoint-down(md) {
+            flex-basis: 50% !important;
+            width: 50%;
+            margin-bottom: 30px;
         }
     }
 
