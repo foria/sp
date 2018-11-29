@@ -47,9 +47,10 @@
     @include responsive-size("height", 543 );
     @include responsive-size("margin-left", -100 );
     transition: width .5s ease-in-out, height .5s ease-in-out, opacity .1s;
-    transform: translate3d(0,0,0);
-    will-change: width, height;
+    // transform: translate3d(0,0,0);
+    // will-change: width, height;
     transition-delay: 0s, 0s, 0s;
+    overflow: visible;
 
     @include media-breakpoint-down(md) {
         width: 345px;
@@ -70,7 +71,7 @@
         height: 100%;
         z-index: 10;
         transition: margin .5s ease-in-out;
-        will-change: opacity, margin;
+        //will-change: opacity, margin;
         //-webkit-backface-visibility: hidden;
         // backface-visibility: hidden;
 
@@ -138,7 +139,6 @@
         .wheel--two,
         .wheel--three,
         .wheel--four {
-            -webkit-animation-fill-mode: backwards;
             animation-fill-mode: backwards;
             opacity: .2;
         }
@@ -215,7 +215,7 @@
 
     svg {
         > a {
-            -webkit-backface-visibility: hidden;
+            //-webkit-backface-visibility: hidden;
             &:hover,
             &.hover {
                 opacity: 1 !important;
