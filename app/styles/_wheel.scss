@@ -71,7 +71,7 @@
         z-index: 10;
         transition: margin .5s ease-in-out;
         will-change: opacity, margin;
-        -webkit-backface-visibility: hidden;
+        //-webkit-backface-visibility: hidden;
         // backface-visibility: hidden;
 
         @include media-breakpoint-down(md) {
