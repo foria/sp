@@ -143,7 +143,7 @@ jQuery(function($){
         if( $('.community-list').length > 0 ){
             $('.community-list li').hover(function(){
                 $('.community-cities').find('.active').removeClass('active');
-                cityClass = "." + $(this).data('city');
+                cityClass = '.' + $(this).data('city');
                 $('.community-cities').find(cityClass).addClass('active');
             })
         }
