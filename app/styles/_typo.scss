@@ -159,9 +159,13 @@ h5 {
             transform: translatex(-50%);
             width: 95%;
             @include responsive-size("max-width", $section-title-border-width );
-            @include responsive-size("height", 1 );
+            height: 1px;
             background-color: map-get($theme-colors, secondary);
             z-index: 1;
+
+            @include media-breakpoint-up(xl) {
+                height: 2px;
+            }
         }
 
         &:before {
