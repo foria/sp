@@ -95,7 +95,8 @@ gulp.task('extras', () => {
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('serve', () => {
-  runSequence(['clean', 'wiredep'], ['styles', 'scripts', 'fonts'], () => {
+  //runSequence(['clean', 'wiredep'], ['styles', 'scripts', 'fonts'], () => {
+  runSequence(['wiredep'], ['styles', 'scripts', 'fonts'], () => {
     browserSync.init({
       notify: false,
       port: 9000,
@@ -173,7 +174,7 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 gulp.task('default', () => {
   return new Promise(resolve => {
     dev = false;
-    //runSequence(['wiredep'], 'build', resolve);
-    runSequence(['clean', 'wiredep'], 'build', resolve);
+    runSequence(['wiredep'], 'build', resolve);
+    //runSequence(['clean', 'wiredep'], 'build', resolve);
   });
 });
