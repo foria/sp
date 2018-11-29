@@ -355,6 +355,12 @@
     }
 }
 
+@supports (-ms-ime-align:auto) {
+    .safetyy--chart figcaption {
+        width: 77%;
+    }
+}
+
 #boosting-program {
     img {
         @include responsive-size("margin-top", $margin-double );

@@ -83,6 +83,12 @@
     // }
 }
 
+@supports (-ms-ime-align:auto) {
+    .chart-animation figcaption {
+        width: 100%;
+    }
+}
+
 .chart-brands:after {
     content: "";
     position: absolute;
