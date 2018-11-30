@@ -63,15 +63,6 @@ jQuery(function($){
             // wheel animations
             $('.wheel').addClass('animate');
 
-            // hover effect on wheel
-            $('.wheel--slicies svg > a').hover(function(){
-                $('.wheel--slicies svg').find('.hover').removeClass('hover');
-                $(this).addClass('hover');
-                $('.wheel').addClass('hover');
-                $('.wheel').removeClass('animate');
-                $('.wheel').addClass('post-animate');
-            })
-
             $('.wheel').mouseleave(function(){
                 $('.wheel').removeClass('hover');
                 $('.wheel--slicies svg > a').find('.hover').removeClass('hover');
@@ -90,11 +81,20 @@ jQuery(function($){
                 }
             });
 
-            // hover effect on wheel
+            // hover and click effect on wheel
             if ('ontouchstart' in document.documentElement){
                 $('.wheel--slicies svg > a').click(function(){
                     var linkURL = $(this).attr('href');
                     window.location.href = linkURL;
+                })
+            } else {
+                // hover effect on wheel
+                $('.wheel--slicies svg > a').hover(function(){
+                    $('.wheel--slicies svg').find('.hover').removeClass('hover');
+                    $(this).addClass('hover');
+                    $('.wheel').addClass('hover');
+                    $('.wheel').removeClass('animate');
+                    $('.wheel').addClass('post-animate');
                 })
             }
 
