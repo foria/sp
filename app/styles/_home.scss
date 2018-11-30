@@ -404,14 +404,14 @@
         margin: 0 0 1.5em 0;
         padding: 0;
 
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+
         li {
             flex-basis: 15%;
             margin-bottom: 2%;
             cursor: pointer;
-
-            @include media-breakpoint-down(sm) {
-                flex-basis: 33%;
-            }
         }
     }
 

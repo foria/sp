@@ -1,5 +1,5 @@
 
-.accordion {
+#accordion-levissima {
     list-style: none;
     padding: 0;
     width: 100%;
@@ -51,3 +51,26 @@
     }
 }
 
+#accordion-un-task {
+    display: none;
+
+    @include media-breakpoint-down(sm) {
+        display: block;
+    }
+
+    button {
+        padding: 0;
+    }
+
+    p {
+        margin-bottom: 0;
+        line-height: 4em;
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 0;
+
+        &:not(:last-child) {
+            border-bottom: 1px dotted map-get($theme-colors, secondary);
+        }
+    }
+}
