@@ -77,6 +77,7 @@ jQuery(function($){
                 $('.wheel--slicies svg > a').find('.hover').removeClass('hover');
             })
 
+            // toggle sticky header on HP
             window.addEventListener('scroll', function(e) {
                 if ($(document).scrollTop() > 300) {
                     $('body').addClass('sticky-header');
@@ -88,6 +89,15 @@ jQuery(function($){
                     $('#cd-vertical-nav').removeClass('show-nav');
                 }
             });
+
+            // hover effect on wheel
+            if ('ontouchstart' in document.documentElement){
+                $('.wheel--slicies svg > a').click(function(){
+                    var linkURL = $(this).attr('href');
+                    window.location.href = linkURL;
+                })
+            }
+
         } else {
             $('#cd-vertical-nav').addClass('show-nav');
         }
@@ -191,7 +201,7 @@ jQuery(function($){
         });
     }
 
-    if($('#video-train').length > 0){
+    if($('#video-train').length > 0 && window.innerWidth > 767){
         var elementTop, elementBottom, viewportTop, viewportBottom, diffTop, proportion, proportionIndex, totalFrames;
 
         // video play on scroll
