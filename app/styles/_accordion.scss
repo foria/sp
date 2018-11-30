@@ -54,7 +54,7 @@
 #accordion-un-task {
     display: none;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
         display: block;
     }
 
