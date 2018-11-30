@@ -236,6 +236,10 @@ h5 {
                 z-index: 2;
                 overflow: hidden;
 
+                @include media-breakpoint-down(sm){
+                    font-size: 11px;
+                }
+
                 &:before,
                 &:after {
                     content: "";

@@ -73,10 +73,6 @@ body {
         margin-bottom: -400px;
     }
 
-    @include media-breakpoint-down(sm){
-        display: none;
-    }
-
     .p-fold {
         @include responsive-size("height", 53 );
         position: relative;
@@ -96,8 +92,18 @@ body {
             z-index: 1;
         }
 
+        p:first-child {
+            @include media-breakpoint-down(sm){
+                font-size: 15px;
+            }
+        }
+
         p:last-child {
             margin-bottom: 0;
+
+            @include media-breakpoint-down(sm){
+                font-size: 12px;
+            }
         }
     }
 

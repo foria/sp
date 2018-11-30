@@ -63,7 +63,7 @@
         left: 0;
         top: 50%;
         //transform: translatey(-50%);
-        @include responsive-size("margin-top", -(543/2) );
+        @include responsive-size("margin-top", -(544/2) );
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
@@ -216,9 +216,9 @@
     z-index: 11 !important;
     opacity: 0;
 
-    @include media-breakpoint-down(md) {
-        display: none;
-    }
+    // @include media-breakpoint-down(md) {
+    //     display: none;
+    // }
 
     .sticky-header & {
         display: none;

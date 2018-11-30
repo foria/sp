@@ -15,23 +15,6 @@ $(function() {
   });
 });
 
-// HTMLVideoElement.prototype.playBackwards = function() {
-//     this.pause();
-
-//     var video = this;
-
-//     var fps = 50;
-//     var intervalRewind = setInterval(function() {
-//         if(video.currentTime == 0){
-//            clearInterval(intervalRewind);
-//            video.pause();
-//         }
-//         else {
-//             video.currentTime += -(1/fps);
-//         }
-//     }, 1000 / fps);
-// };
-
 jQuery(function($){
 
     $(document).ready(function(){
@@ -74,9 +57,26 @@ jQuery(function($){
             }
         });
 
-        // toggle sticky header on HP
+        // wheel & toggle sticky header on HP
         if($('body').hasClass('home-page')) {
+
+            // wheel animations
             $('.wheel').addClass('animate');
+
+            // hover effect on wheel
+            $('.wheel--slicies svg > a').hover(function(){
+                $('.wheel--slicies svg').find('.hover').removeClass('hover');
+                $(this).addClass('hover');
+                $('.wheel').addClass('hover');
+                $('.wheel').removeClass('animate');
+                $('.wheel').addClass('post-animate');
+            })
+
+            $('.wheel').mouseleave(function(){
+                $('.wheel').removeClass('hover');
+                $('.wheel--slicies svg > a').find('.hover').removeClass('hover');
+            })
+
             window.addEventListener('scroll', function(e) {
                 if ($(document).scrollTop() > 300) {
                     $('body').addClass('sticky-header');
@@ -92,22 +92,7 @@ jQuery(function($){
             $('#cd-vertical-nav').addClass('show-nav');
         }
 
-        // hover effect on wheel
-        $('.wheel--slicies svg > a').hover(function(){
-            $('.wheel--slicies svg').find('.hover').removeClass('hover');
-            $(this).addClass('hover');
-            $('.wheel').addClass('hover');
-            $('.wheel').removeClass('animate');
-            $('.wheel').addClass('post-animate');
-        })
-
-        $('.wheel').mouseleave(function(){
-            $('.wheel').removeClass('hover');
-            $('.wheel--slicies svg > a').find('.hover').removeClass('hover');
-        })
-
         // Scroll Navigation
-
         var $contentSections = $('.section'),
         navigationItems = $('#cd-vertical-nav a');
 
