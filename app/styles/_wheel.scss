@@ -1,5 +1,5 @@
 .wheel-container {
-    @include responsive-size("height", 543 );
+    @include responsive-size("height", 544 );
     position: relative;
 
     @include media-breakpoint-down(md) {
@@ -44,7 +44,7 @@
 .wheel {
     position: relative;
     @include responsive-size("width", 522 );
-    @include responsive-size("height", 543 );
+    @include responsive-size("height", 544 );
     @include responsive-size("margin-left", -100 );
     transition: width .5s ease-in-out, height .5s ease-in-out, opacity .1s;
     // transform: translate3d(0,0,0);
