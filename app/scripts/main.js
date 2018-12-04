@@ -38,9 +38,9 @@ jQuery(function($){
         });
 
         // mwheel-model trigger
-        $('.div-toggler').on('click', function() {
-            $('#wheel-model').toggleClass('opened');
-        });
+        // $('.div-toggler').on('click', function() {
+        //     $('#wheel-model').toggleClass('opened');
+        // });
 
         // UN boxes
         var boxes, data;
