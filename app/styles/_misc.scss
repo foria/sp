@@ -140,13 +140,13 @@ body {
 
 #page-title {
     @extend .container;
-    margin-top: 0;
+    @include responsive-size("margin-top", 70 );
     z-index: 3;
     //@include responsive-size("padding-top", 272 );
 
     .title-img {
         max-width: 1000%;
-        margin-bottom: -190px;
+        @include responsive-size("margin-bottom", -190 );
         width: 140%;
         margin-left: -36%;
 

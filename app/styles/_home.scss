@@ -328,6 +328,10 @@
 .safetyy--chart {
     position: relative;
 
+    .ie-show {
+        display: none;
+    }
+
     figcaption {
         position: absolute;
         top: 12%;
@@ -363,11 +367,18 @@
     }
 }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+//@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .rest-show,
+    .safetyy--chart svg {
+        display: none;
+    }
+    .ie-show {
+        display: block;
+    }
     .safetyy--chart figcaption {
         width: 77%;
     }
-}
+//}
 
 #boosting-program {
     img {
