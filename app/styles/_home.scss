@@ -367,7 +367,7 @@
     }
 }
 
-//@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     .rest-show,
     .safetyy--chart svg {
         display: none;
@@ -378,7 +378,7 @@
     .safetyy--chart figcaption {
         width: 77%;
     }
-//}
+}
 
 #boosting-program {
     img {
