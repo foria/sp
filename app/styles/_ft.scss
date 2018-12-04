@@ -243,8 +243,8 @@
     }
 
     > img {
-        @include responsive-size("width", 76 );
-        @include responsive-size("height", 38 );
+        @include responsive-size("width", 90 );
+        @include responsive-size("height", 50 );
         position: absolute;
         transform: scale(0);
         transition: transform .3s ease-in-out;
@@ -255,33 +255,33 @@
     }
 
     .castrocielo {
-        top: 43%;
-        left: 48%;
+        top: 40%;
+        left: 46%;
     }
 
     .sangiorgioinbosco {
-        top: 8%;
-        right: 45%;
+        top: 6%;
+        right: 43%;
     }
 
     .sanpellegrinoterme {
-        top: 4%;
-        right: 61%;
+        top: 2%;
+        right: 59%;
     }
 
     .scarperia {
-        top: 31%;
-        left: 30%;
+        top: 29%;
+        left: 28%;
     }
 
     .sstefano {
-        bottom: 11%;
-        left: 50%;
+        bottom: 10%;
+        left: 48%;
     }
 
     .valdisotto {
-        top: 0;
-        right: 59%;
+        top: -2%;
+        right: 58%;
     }
 }
 

@@ -188,6 +188,7 @@
     padding: 0;
     text-align: left;
     @include responsive-size("margin-top", $margin-double );
+    width: 100%;
 
     @include media-breakpoint-down(md) {
         margin-top: 100px;
@@ -227,6 +228,13 @@
         @include responsive-size("margin-top", 5 );
         padding-right: 4%;
         display: block;
+    }
+}
+
+// Bug on IE 11
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .team-brands--team li {
+        flex-basis: 26.333%;
     }
 }
 
@@ -355,7 +363,7 @@
     }
 }
 
-@supports (-ms-ime-align:auto) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     .safetyy--chart figcaption {
         width: 77%;
     }

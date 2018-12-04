@@ -44,46 +44,10 @@
         figcaption {
             width: 100%;
         }
-        &.vertical-animation {
-            figcaption {
-                height: 100%;
-            }
-        }
     }
-
-    // &.vertical-animation {
-    //     figcaption {
-    //         top: auto;
-    //         bottom: 0;
-    //         width: 100%;
-    //         height: 0;
-    //         // height: 100%;
-    //         transition: height .5s ease-in;
-
-    //         @include media-breakpoint-down(md) {
-    //             height: 100%;
-    //         }
-
-    //         // img {
-    //         //     @include responsive-size("width", 820 );
-    //         //     max-width: 1000%;
-
-    //         //     @include media-breakpoint-down(md) {
-    //         //         height: 100%;
-    //         //         max-width: 100%;
-    //         //     }
-
-    //         //     &.tl-chart--circle {
-    //         //         position: absolute;
-    //         //         top: 0;
-    //         //         left: 0;
-    //         //     }
-    //         // }
-    //     }
-    // }
 }
 
-@supports (-ms-ime-align:auto) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     .chart-animation figcaption {
         width: 100%;
     }
