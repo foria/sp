@@ -89,6 +89,18 @@
     }
 }
 
+// Bug on IE 11
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .footer-menu li {
+        //flex: 1 1 1 !important;
+        flex-basis: 5% !important;
+
+        &:nth-child(3) {
+            flex-basis: 9% !important;
+        }
+    }
+}
+
 .copyright {
     text-align: center;
     margin-bottom: 150px;

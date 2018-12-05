@@ -87,6 +87,16 @@ jQuery(function($){
                     var linkURL = $(this).attr('href');
                     window.location.href = linkURL;
                 })
+
+                // community table touch effect
+                var cityClass;
+                if( $('.community-list').length > 0 ){
+                    $('.community-list li').click(function(){
+                        $('.community-cities').find('.active').removeClass('active');
+                        cityClass = '.' + $(this).data('city');
+                        $('.community-cities').find(cityClass).addClass('active');
+                    })
+                }
             } else {
                 // hover effect on wheel
                 $('.wheel--slicies svg > a').hover(function(){
@@ -96,6 +106,16 @@ jQuery(function($){
                     $('.wheel').removeClass('animate');
                     $('.wheel').addClass('post-animate');
                 })
+
+                // community table hover effect
+                var cityClass;
+                if( $('.community-list').length > 0 ){
+                    $('.community-list li').hover(function(){
+                        $('.community-cities').find('.active').removeClass('active');
+                        cityClass = '.' + $(this).data('city');
+                        $('.community-cities').find(cityClass).addClass('active');
+                    })
+                }
             }
 
         } else {
@@ -135,14 +155,22 @@ jQuery(function($){
             smoothScroll($(this.hash));
         });
 
-        // community table
-        var cityClass;
         if( $('.community-list').length > 0 ){
-            $('.community-list li').hover(function(){
-                $('.community-cities').find('.active').removeClass('active');
-                cityClass = '.' + $(this).data('city');
-                $('.community-cities').find(cityClass).addClass('active');
-            })
+            // hover and click effect on community table
+            var cityClass;
+            if ('ontouchstart' in document.documentElement){
+                $('.community-list li').on( 'touchstart', function(){
+                    $('.community-cities').find('.active').removeClass('active');
+                    cityClass = '.' + $(this).data('city');
+                    $('.community-cities').find(cityClass).addClass('active');
+                })
+            } else {
+                $('.community-list li').hover(function(){
+                    $('.community-cities').find('.active').removeClass('active');
+                    cityClass = '.' + $(this).data('city');
+                    $('.community-cities').find(cityClass).addClass('active');
+                })
+            }
         }
 
     });
