@@ -24,8 +24,12 @@
         }
 
         img {
-            @include responsive-size("width", 820 );
+            width: 790px;
             max-width: 1000%;
+
+            @include media-breakpoint-up(xl){
+                width: 1497.82258065px;
+            }
 
             @include media-breakpoint-down(md) {
                 width: 100%;

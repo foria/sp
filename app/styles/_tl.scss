@@ -130,7 +130,7 @@
 }
 
 .compraverde {
-    @include responsive-size('width', 200);
+    @include responsive-size('width', 300);
     @include responsive-size('margin-bottom', $margin-normal);
     display: block;
     margin-left: auto;
