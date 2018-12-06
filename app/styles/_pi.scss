@@ -1,3 +1,7 @@
 .soste-img {
     @include responsive-size('width', 657);
 }
+
+#acquapanna {
+    @include responsive-size('margin-top', -110);
+}

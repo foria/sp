@@ -69,17 +69,17 @@ jQuery(function($){
             })
 
             // toggle sticky header on HP
-            window.addEventListener('scroll', function(e) {
-                if ($(document).scrollTop() > 300) {
-                    $('body').addClass('sticky-header');
-                    $('.wheel').removeClass('post-animate');
-                    $('#cd-vertical-nav').addClass('show-nav');
-                } else {
-                    $('body').removeClass('sticky-header');
-                    $('.wheel').addClass('animate');
-                    $('#cd-vertical-nav').removeClass('show-nav');
-                }
-            });
+            // window.addEventListener('scroll', function(e) {
+            //     if ($(document).scrollTop() > 300) {
+            //         $('body').addClass('sticky-header');
+            //         $('.wheel').removeClass('post-animate');
+            //         $('#cd-vertical-nav').addClass('show-nav');
+            //     } else {
+            //         $('body').removeClass('sticky-header');
+            //         $('.wheel').addClass('animate');
+            //         $('#cd-vertical-nav').removeClass('show-nav');
+            //     }
+            // });
 
             // hover and click effect on wheel
             if ('ontouchstart' in document.documentElement){
@@ -87,16 +87,6 @@ jQuery(function($){
                     var linkURL = $(this).attr('href');
                     window.location.href = linkURL;
                 })
-
-                // community table touch effect
-                var cityClass;
-                if( $('.community-list').length > 0 ){
-                    $('.community-list li').click(function(){
-                        $('.community-cities').find('.active').removeClass('active');
-                        cityClass = '.' + $(this).data('city');
-                        $('.community-cities').find(cityClass).addClass('active');
-                    })
-                }
             } else {
                 // hover effect on wheel
                 $('.wheel--slicies svg > a').hover(function(){
@@ -106,16 +96,6 @@ jQuery(function($){
                     $('.wheel').removeClass('animate');
                     $('.wheel').addClass('post-animate');
                 })
-
-                // community table hover effect
-                var cityClass;
-                if( $('.community-list').length > 0 ){
-                    $('.community-list li').hover(function(){
-                        $('.community-cities').find('.active').removeClass('active');
-                        cityClass = '.' + $(this).data('city');
-                        $('.community-cities').find(cityClass).addClass('active');
-                    })
-                }
             }
 
         } else {
