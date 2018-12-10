@@ -23,6 +23,7 @@
     }
 
 }
+
 .ad-msg--quote {
     @include responsive-size("width", 470 );
     @include responsive-size("height", 470 );
@@ -106,6 +107,19 @@
 
 #about {
     margin-top: 0;
+}
+
+.planet-dotted {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.azienda-page {
+    //.st0{fill:#00245B;}
+    .st1{fill:#4A5496;}
+    .st2{fill:#FF322B;}
+    .st3{fill:#FFFFFF;}
 }
 
 .about--revenue {
@@ -246,6 +260,16 @@
             content: none;
         }
     }
+
+    .sn0{fill:none;stroke:#00295A;stroke-miterlimit:10;}
+    .sn1{fill:#4E5594;}
+    .sn2{fill:#00295A;}
+    .sn3{fill:none;stroke:#F3352F;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:0,9.3824;}
+    .sn4{fill:none;stroke:#00295A;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:0,9;}
+    .sn5{fill:#FF322B;}
+    .sn6{fill:#FFFFFF;}
+    .sn7{font-family:'Museo300-Regular';}
+    .sn8{font-size:50px;}
 }
 
 .share-revenues--img {
@@ -254,6 +278,18 @@
     @include media-breakpoint-down(md) {
         width: 95%;
     }
+}
+
+img.ie-img {
+    display: none;
+}
+// hide svg and show img on IE/EDGE
+_:-ms-input-placeholder, :root img.ie-img {
+    display: block;
+    margin: 0 auto;
+}
+_:-ms-input-placeholder, :root *.ie-bug {
+    display: none;
 }
 
 #employees {
@@ -377,6 +413,16 @@
     }
     .safetyy--chart figcaption {
         width: 77%;
+    }
+}
+
+#ruota1 {
+    > * {
+        opacity: 0;
+    }
+
+    > .showed {
+        opacity: 1;
     }
 }
 

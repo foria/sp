@@ -1,3 +1,4 @@
+
 AOS.init({
   offset: 120, // offset (in px) from the original trigger point
   delay: 300, // values from 0 to 3000, with step 50ms
@@ -5,15 +6,23 @@ AOS.init({
   anchorPlacement: 'top-top', // defines which position of the element regarding to window should trigger the animation
 });
 
-$(function() {
-  var timer;
-  $(window).scroll(function() {
-    clearTimeout(timer);
-    timer = setTimeout(function() {
-      $(window).trigger('scrollStop');
-    }, 100);
-  });
-});
+// Check if element is in the viewport.
+$.fn.isInViewport = function() {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+function incrementNumber($el, speed, limit){
+    var current = parseInt($el.html()) + (177 * speed);
+    if(current > limit){
+        current = limit;
+    }
+    $el.html(current);
+}
+
 
 jQuery(function($){
 
@@ -137,12 +146,22 @@ jQuery(function($){
 
         if( $('.community-list').length > 0 ){
             // hover and click effect on community table
-            var cityClass;
+            var cityClass, cityData;
             if ('ontouchstart' in document.documentElement){
                 $('.community-list li').on( 'touchstart', function(){
                     $('.community-cities').find('.active').removeClass('active');
                     cityClass = '.' + $(this).data('city');
                     $('.community-cities').find(cityClass).addClass('active');
+                })
+
+                $('.community-cities img').on( 'touchstart', function(){
+                    $('.community-list').find('.active').removeClass('active');
+                    cityData = $(this).attr('class');
+                    $('.community-list').find('li[data-city="'+cityData+'"]').addClass('active');
+                })
+
+                $('.community-cities img').on( 'touchend', function(){
+                    $('.community-list').find('.active').removeClass('active');
                 })
             } else {
                 $('.community-list li').hover(function(){
@@ -150,10 +169,47 @@ jQuery(function($){
                     cityClass = '.' + $(this).data('city');
                     $('.community-cities').find(cityClass).addClass('active');
                 })
+
+                $('.community-cities img').hover(function(){
+                    cityData = $(this).attr('class');
+                    $('.community-list').find('li[data-city="'+cityData+'"]').addClass('active');
+                }, function(){
+                    $('.community-list').find('.active').removeClass('active');
+                })
             }
         }
 
     });
+
+    if($('#share-revenues').length > 0){
+        $(window).on('resize scroll', function(){
+            if ($('#numero3').isInViewport()) {
+                 var numero3 = setInterval(function() {
+                    incrementNumber($('#numero3'), 9, 911312);
+                    incrementNumber($('#numero4'), 9, 919295);
+                }, 0.1);
+            }
+            if ($('#numero1').isInViewport()) {
+                 var numero1 = setInterval(function() {
+                    incrementNumber($('#numero1'), 9, 902008);
+                    incrementNumber($('#numero2'), 9, 885959);
+                }, 0.1);
+            }
+            if ($('#numero5').isInViewport()) {
+                 var numero5 = setInterval(function() {
+                    incrementNumber($('#numero5'), 1, 25353);
+                    incrementNumber($('#numero6'), 1, 17287);
+                }, 0.1);
+            }
+        });
+    }
+
+    function dottetCircleAnimation(){
+        $('#ruota1 .showed').last().next().addClass('showed');
+    }
+    setInterval(function() {
+        dottetCircleAnimation();
+    }, 1);
 
     if($('.trattore').length > 0){
         var elementTop, elementBottom, viewportTop, viewportBottom, diffTop, proportion;
@@ -165,7 +221,7 @@ jQuery(function($){
             viewportBottom = viewportTop + $(window).height();
             diffTop = viewportBottom - elementTop;
             proportion = ( (diffTop / $(window).height())*100 ) -20;
-            console.log(elementTop + ' ' + viewportBottom + ' ' + viewportTop + ' ' + diffTop);
+            //console.log(elementTop + ' ' + viewportBottom + ' ' + viewportTop + ' ' + diffTop);
 
             if( proportion > 0 && proportion < 40 ){
                 $('.trattore').css('left', proportion+'%' );
@@ -183,7 +239,7 @@ jQuery(function($){
             viewportBottom = viewportTop + $(window).height();
             diffTop = viewportBottom - elementTop;
             proportion = ( (diffTop / $(window).height())*100 ) -20;
-            console.log(elementTop + ' ' + viewportBottom + ' ' + viewportTop + ' ' + diffTop);
+            //console.log(elementTop + ' ' + viewportBottom + ' ' + viewportTop + ' ' + diffTop);
 
             if( proportion > 0 && proportion < 75 ){
                 $('.hfarm-trattore').css('left', proportion+'%' );
@@ -210,6 +266,16 @@ jQuery(function($){
     }
 
     if($('#video-train').length > 0 && window.innerWidth > 767){
+        $(function() {
+          var timer;
+          $(window).scroll(function() {
+            clearTimeout(timer);
+            timer = setTimeout(function() {
+              $(window).trigger('scrollStop');
+            }, 100);
+          });
+        });
+
         var elementTop, elementBottom, viewportTop, viewportBottom, diffTop, proportion, proportionIndex, totalFrames;
 
         // video play on scroll

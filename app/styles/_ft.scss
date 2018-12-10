@@ -199,7 +199,8 @@
             }
         }
 
-        &:hover {
+        &:hover,
+        &.active {
             background-color: #d4c9ac;
             cursor: pointer;
         }
@@ -250,17 +251,26 @@
         @include responsive-size("width", 90 );
         @include responsive-size("height", 50 );
         position: absolute;
-        transform: scale(0);
-        transition: transform .3s ease-in-out;
+        transform: scale(0.2);
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+        opacity: 0;
 
+        &:hover,
         &.active {
+            opacity: 1;
             transform: scale(1);
         }
     }
 
     .castrocielo {
-        top: 40%;
+        top: 46%;
         left: 46%;
+
+        &:hover,
+        &.active {
+            top: 40%;
+        }
 
         @include media-breakpoint-down(md){
             top: 33%;
@@ -269,8 +279,13 @@
     }
 
     .sangiorgioinbosco {
-        top: 6%;
+        top: 12%;
         right: 43%;
+
+        &:hover,
+        &.active {
+            top: 6%;
+        }
 
         @include media-breakpoint-down(md){
             top: 7%;
@@ -279,8 +294,13 @@
     }
 
     .sanpellegrinoterme {
-        top: 2%;
+        top: 8%;
         right: 59%;
+
+        &:hover,
+        &.active {
+            top: 2%;
+        }
 
         @include media-breakpoint-down(md){
             top: 4%;
@@ -289,8 +309,13 @@
     }
 
     .scarperia {
-        top: 29%;
+        top: 35%;
         left: 28%;
+
+        &:hover,
+        &.active {
+            top: 29%;
+        }
 
         @include media-breakpoint-down(md){
             top: 25%;
@@ -299,8 +324,13 @@
     }
 
     .sstefano {
-        bottom: 10%;
+        bottom: 4%;
         left: 48%;
+
+        &:hover,
+        &.active {
+            bottom: 10%;
+        }
 
         @include media-breakpoint-down(md){
             bottom: 26%;
@@ -309,8 +339,13 @@
     }
 
     .valdisotto {
-        top: -2%;
+        top: 4%;
         right: 58%;
+
+        &:hover,
+        &.active {
+            top: -2%;
+        }
 
         @include media-breakpoint-down(md){
             top: 1%;

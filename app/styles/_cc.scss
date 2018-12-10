@@ -7,10 +7,10 @@
 }
 
 .sostegno-img {
-    background: url(../images/cc/sostegno.jpg) top center no-repeat;
-    background-size: cover;
-    @include responsive-size('padding-top', 35);
-    @include responsive-size('padding-bottom', 35);
+    // background: url(../images/cc/sostegno.jpg) top center no-repeat;
+    // background-size: cover;
+    // @include responsive-size('padding-top', 35);
+    // @include responsive-size('padding-bottom', 35);
     @include responsive-size('margin-top', -($margin-section));
 
     @include media-breakpoint-down(md){
