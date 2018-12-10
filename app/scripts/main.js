@@ -15,12 +15,18 @@ $.fn.isInViewport = function() {
     return elementBottom > viewportTop && elementTop < viewportBottom;
 };
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
+
 function incrementNumber($el, speed, limit){
-    var current = parseInt($el.html()) + (177 * speed);
+    var string = $el.html();
+    var stringNum = string.split('.');
+    var current = parseInt( stringNum[0] + stringNum[1] ) + (177 * speed);
     if(current > limit){
         current = limit;
     }
-    $el.html(current);
+    $el.html(numberWithCommas(current));
 }
 
 
