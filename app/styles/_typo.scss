@@ -109,6 +109,9 @@ h3 {
             left: 50%;
             transform: translatex(-50%);
 
+            .azienda-page & {
+                background-color: map-get($theme-colors, secondary);
+            }
             .ft-page & {
                 background-color: $fonti;
                 .sec-color#{&} {

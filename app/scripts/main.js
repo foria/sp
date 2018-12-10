@@ -212,6 +212,7 @@ jQuery(function($){
 
     function dottetCircleAnimation(){
         $('#ruota1 .showed').last().next().addClass('showed');
+        $('#ruota2 .showed').last().next().addClass('showed');
     }
     setInterval(function() {
         dottetCircleAnimation();
