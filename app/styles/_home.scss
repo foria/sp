@@ -399,13 +399,12 @@ _:-ms-input-placeholder, :root *.ie-bug {
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    .rest-show,
-    .safetyy--chart svg {
-        display: none;
+    .safetyy--chart figcaption {
+        width: 77%;
     }
-    .safetyy--chart .ie-show {
-        display: block;
-    }
+}
+
+@supports (-ms-ime-align:auto) {
     .safetyy--chart figcaption {
         width: 77%;
     }
