@@ -410,7 +410,8 @@ _:-ms-input-placeholder, :root *.ie-bug {
     }
 }
 
-.azienda-page #ruota1 {
+.azienda-page #cerchio1,
+.azienda-page #cerchio2 {
     > * {
         opacity: 0;
     }

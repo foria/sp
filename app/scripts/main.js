@@ -7,11 +7,11 @@ AOS.init({
 });
 
 // Check if element is in the viewport.
-$.fn.isInViewport = function() {
+$.fn.isInViewport = function(offset) {
     var elementTop = $(this).offset().top;
     var elementBottom = elementTop + $(this).outerHeight();
-    var viewportTop = $(window).scrollTop();
-    var viewportBottom = viewportTop + $(window).height();
+    var viewportTop = $(window).scrollTop() + offset;
+    var viewportBottom = viewportTop + $(window).height() - offset;
     return elementBottom > viewportTop && elementTop < viewportBottom;
 };
 
@@ -189,34 +189,35 @@ jQuery(function($){
 
     if($('#share-revenues').length > 0){
         $(window).on('resize scroll', function(){
-            if ($('#numero3').isInViewport()) {
+            if ($('#numero3').isInViewport(0)) {
                  var numero3 = setInterval(function() {
                     incrementNumber($('#numero3'), 9, 911312);
                     incrementNumber($('#numero4'), 9, 919295);
                 }, 0.1);
             }
-            if ($('#numero1').isInViewport()) {
+            if ($('#numero1').isInViewport(0)) {
                  var numero1 = setInterval(function() {
                     incrementNumber($('#numero1'), 9, 902008);
                     incrementNumber($('#numero2'), 9, 885959);
                 }, 0.1);
             }
-            if ($('#numero5').isInViewport()) {
+            if ($('#numero5').isInViewport(0)) {
                  var numero5 = setInterval(function() {
                     incrementNumber($('#numero5'), 1, 25353);
                     incrementNumber($('#numero6'), 1, 17287);
                 }, 0.1);
             }
+            if ($('#cerchio1').isInViewport(650)) {
+                function dottetCircleAnimation(){
+                    $('#cerchio1 .showed').first().prev().addClass('showed');
+                    $('#cerchio2 .showed').first().prev().addClass('showed');
+                }
+                setInterval(function() {
+                    dottetCircleAnimation();
+                }, 30);
+            }
         });
     }
-
-    function dottetCircleAnimation(){
-        $('#ruota1 .showed').last().next().addClass('showed');
-        $('#ruota2 .showed').last().next().addClass('showed');
-    }
-    setInterval(function() {
-        dottetCircleAnimation();
-    }, 1);
 
     if($('.trattore').length > 0){
         var elementTop, elementBottom, viewportTop, viewportBottom, diffTop, proportion;

@@ -80,6 +80,10 @@
             @include responsive-size("margin-top", -(600/2) );
         }
 
+        @include media-breakpoint-down(sm) {
+            @include responsive-size("margin-top", -(353/2) );
+        }
+
         // .sticky-header & {
         //     @include responsive-size("margin-top", -(186/2) );
         // }
