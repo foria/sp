@@ -113,9 +113,10 @@ jQuery(function($){
                 })
             }
 
-        } else {
-            $('#cd-vertical-nav').addClass('show-nav');
         }
+        // else {
+        //     $('#cd-vertical-nav').addClass('show-nav');
+        // }
 
         // Scroll Navigation
         var $contentSections = $('.section'),

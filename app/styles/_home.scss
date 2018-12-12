@@ -293,8 +293,9 @@ _:-ms-input-placeholder, :root *.ie-bug {
     }
 }
 
-.leadership {
+figure.leadership {
     position: relative;
+    overflow: visible !important;
 
     figcaption > div {
         position: absolute;
@@ -410,14 +411,18 @@ _:-ms-input-placeholder, :root *.ie-bug {
     }
 }
 
-.azienda-page #cerchio1,
-.azienda-page #cerchio2 {
-    > * {
-        opacity: 0;
-    }
 
-    > .showed {
-        opacity: 1;
+
+@include media-breakpoint-up(lg) {
+    .azienda-page #cerchio1,
+    .azienda-page #cerchio2 {
+        > * {
+            opacity: 0;
+        }
+
+        > .showed {
+            opacity: 1;
+        }
     }
 }
 

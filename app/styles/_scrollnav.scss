@@ -1,15 +1,13 @@
 
-/* No Touch devices */
-
 #cd-vertical-nav {
     position: fixed;
     right: 40px;
     @include center(y); // see partials > _mixins.scss
     z-index: 1;
-    display: none;
+    //display: none;
 
-    @include media-breakpoint-down(md) {
-        display: none !important;
+    @media only screen and (max-width: 1024px) {
+        display: none;
     }
 
     &.show-nav {
